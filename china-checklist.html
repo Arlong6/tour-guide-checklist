@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台灣人去廣州 出發清單</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8;
+      color: #1a202c;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+      color: white;
+      padding: 24px 20px 20px;
+      text-align: center;
+    }
+
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+
+    .progress-bar-wrap {
+      background: #f0f4f8;
+      padding: 16px 20px 0;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #718096;
+      margin-bottom: 6px;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #48bb78, #38a169);
+      border-radius: 99px;
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+
+    .container { padding: 16px 20px 80px; max-width: 600px; margin: 0 auto; }
+
+    /* Alert box */
+    .alert {
+      background: #fff3cd;
+      border-left: 4px solid #f6ad55;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .alert.red {
+      background: #fff5f5;
+      border-left-color: #fc8181;
+    }
+    .alert strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+
+    /* Section */
+    .section { margin-bottom: 20px; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .section-icon { font-size: 1.2rem; }
+
+    .section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2d3748;
+    }
+
+    .section-count {
+      margin-left: auto;
+      font-size: 0.78rem;
+      color: #a0aec0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    }
+
+    .item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 16px;
+      border-bottom: 1px solid #f7fafc;
+      cursor: pointer;
+      transition: background 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .item:last-child { border-bottom: none; }
+    .item:active { background: #f7fafc; }
+
+    .item.checked { opacity: 0.55; }
+    .item.checked .item-name { text-decoration: line-through; color: #a0aec0; }
+
+    .checkbox {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid #cbd5e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+      transition: all 0.2s;
+    }
+
+    .item.checked .checkbox {
+      background: #48bb78;
+      border-color: #48bb78;
+    }
+
+    .checkbox-icon { display: none; color: white; font-size: 13px; font-weight: 700; }
+    .item.checked .checkbox-icon { display: block; }
+
+    .item-content { flex: 1; }
+    .item-name { font-size: 0.95rem; font-weight: 600; line-height: 1.4; }
+    .item-note { font-size: 0.8rem; color: #718096; margin-top: 3px; line-height: 1.5; }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 99px;
+      margin-left: 6px;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+    }
+    .tag-red { background: #fff5f5; color: #e53e3e; }
+    .tag-orange { background: #fffaf0; color: #dd6b20; }
+    .tag-blue { background: #ebf8ff; color: #3182ce; }
+
+    /* Notes section */
+    .note-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .note-item {
+      padding: 14px 16px;
+      border-bottom: 1px solid #f7fafc;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .note-item:last-child { border-bottom: none; }
+
+    .note-item .icon { font-size: 1.1rem; margin-right: 8px; }
+    .note-title { font-weight: 700; margin-bottom: 3px; display: flex; align-items: center; }
+    .note-body { color: #4a5568; padding-left: 26px; }
+
+    /* Reset button */
+    .reset-btn {
+      display: block;
+      margin: 0 auto 20px;
+      padding: 10px 24px;
+      background: white;
+      color: #718096;
+      border: 1px solid #e2e8f0;
+      border-radius: 99px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .reset-btn:hover { background: #f7fafc; }
+
+    /* Done banner */
+    .done-banner {
+      display: none;
+      background: linear-gradient(135deg, #48bb78, #38a169);
+      color: white;
+      text-align: center;
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .done-banner.show { display: block; }
+
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #a0aec0;
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="flag">🇹🇼 ✈️ 🇨🇳</div>
+  <h1>台灣人去廣州</h1>
+  <p>出發前確認清單・Taiwan → Guangzhou</p>
+</header>
+
+<div class="progress-bar-wrap">
+  <div class="container" style="padding: 0; padding-top: 16px;">
+    <div class="progress-label">
+      <span>完成進度</span>
+      <span id="progress-text">0 / 0</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="done-banner" id="done-banner">
+    🎉 全部完成！祝旅途平安順利！
+  </div>
+
+  <!-- 緊急提醒 -->
+  <div class="alert red" style="margin-top: 16px;">
+    <strong>⚠️ 出發前最重要的三件事</strong>
+    1. 確認台胞證效期（至少剩 6 個月）<br>
+    2. <strong>在台灣裝好 VPN</strong>（到了大陸就下載不到）<br>
+    3. 設定 Alipay 或 WeChat Pay（現金越來越難用）
+  </div>
+
+  <!-- 1. 必備文件 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📄</span>
+      <span class="section-title">必備文件</span>
+      <span class="section-count" id="count-docs"></span>
+    </div>
+    <div class="card" id="group-docs">
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">台胞證 <span class="tag tag-red">必備</span></div>
+          <div class="item-note">台灣居民來往大陸通行證，效期確認至少剩 6 個月以上。沒有台胞證無法入境！</div>
+        </div>
+      </div>
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">護照 <span class="tag tag-orange">建議攜帶</span></div>
+          <div class="item-note">部分航班報到、飯店入住可能需要護照。效期至少 6 個月以上。</div>
+        </div>
+      </div>
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">來回機票（電子票）</div>
+          <div class="item-note">截圖或下載到手機，確認姓名、航班日期無誤。</div>
+        </div>
+      </div>
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">住宿訂房確認單</div>
+          <div class="item-note">入境時可能被問到住宿地址，提前截圖備用。</div>
+        </div>
+      </div>
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">緊急聯絡資訊備份</div>
+          <div class="item-note">台灣駐陸辦事處電話：（+86）400-808-0900。建議存在手機也紙本備份。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 手機 & 網路 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📱</span>
+      <span class="section-title">手機 & 網路（超重要）</span>
+      <span class="section-count" id="count-phone"></span>
+    </div>
+    <div class="card" id="group-phone">
+      <div class="item" data-group="phone" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">安裝 VPN <span class="tag tag-red">出發前必做</span></div>
+          <div class="item-note">推薦：ExpressVPN、NordVPN、Surfshark。到了大陸 App Store 就找不到了！在台灣裝好。</div>
+        </div>
+      </div>
+      <div class="item" data-group="phone" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">設定 Alipay 國際版 或 WeChat Pay <span class="tag tag-red">出發前必做</span></div>
+          <div class="item-note">現在可以綁定台灣 Visa/Mastercard 信用卡。在台灣完成綁定驗證比較方便。便利商店、餐廳幾乎都用行動支付。</div>
+        </div>
+      </div>
+      <div class="item" data-group="phone" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">電話漫遊 或 中國 SIM 卡</div>
+          <div class="item-note">可向台灣電信商開通大陸漫遊，或在機場購買中國電信/聯通旅遊 SIM。注意：手機需支援大陸頻段。</div>
+        </div>
+      </div>
+      <div class="item" data-group="phone" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">下載離線地圖（百度地圖 或 高德地圖）</div>
+          <div class="item-note">Google Maps 在大陸無法使用。百度地圖、高德地圖是主流，提前下載並設定好。</div>
+        </div>
+      </div>
+      <div class="item" data-group="phone" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">手機充電線 & 充電頭</div>
+          <div class="item-note">中國插座為兩腳扁型（與台灣相同），不需轉接頭。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 金錢 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">💴</span>
+      <span class="section-title">金錢 & 支付</span>
+      <span class="section-count" id="count-money"></span>
+    </div>
+    <div class="card" id="group-money">
+      <div class="item" data-group="money" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">人民幣現金（少量備用）</div>
+          <div class="item-note">雖然行動支付為主，但偏遠地區或計程車可能需要現金。建議換 500-1000 人民幣備用。桃園機場可換匯。</div>
+        </div>
+      </div>
+      <div class="item" data-group="money" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">UnionPay（銀聯）信用卡 或 金融卡</div>
+          <div class="item-note">Visa/Mastercard 在許多地方不被接受。可申辦玉山 or 台新等銀聯卡，或在台灣換現金。</div>
+        </div>
+      </div>
+      <div class="item" data-group="money" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">通知信用卡公司出國消費</div>
+          <div class="item-note">避免刷卡被系統誤判為異常交易而被鎖卡。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 健康 & 藥品 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">💊</span>
+      <span class="section-title">健康 & 藥品</span>
+      <span class="section-count" id="count-health"></span>
+    </div>
+
+    <div class="alert">
+      <strong>⚠️ 攜帶藥品注意</strong>
+      部分台灣常見成藥（如含偽麻黃鹼的感冒藥）在中國屬管制藥品，建議攜帶醫師處方箋，數量不超過個人合理用量。
+    </div>
+
+    <div class="card" id="group-health">
+      <div class="item" data-group="health" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">旅遊醫療保險</div>
+          <div class="item-note">在大陸就醫費用昂貴，強烈建議購買旅平險。信用卡附加保險請確認是否含大陸。</div>
+        </div>
+      </div>
+      <div class="item" data-group="health" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">常備藥（腸胃藥、感冒藥、止痛藥）</div>
+          <div class="item-note">水土不服在大陸很常見，建議帶足自己習慣的藥品。</div>
+        </div>
+      </div>
+      <div class="item" data-group="health" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">口罩（空氣品質因城市而異）</div>
+          <div class="item-note">北方城市冬春季霧霾較重，N95 口罩備用。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. 行李必備 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🧳</span>
+      <span class="section-title">行李必備</span>
+      <span class="section-count" id="count-luggage"></span>
+    </div>
+    <div class="card" id="group-luggage">
+      <div class="item" data-group="luggage" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">行動電源（不超過 20,000 mAh）</div>
+          <div class="item-note">需隨身行李攜帶，不可託運。超過 20,000 mAh 需申報，超過 32,000 mAh 禁止攜帶。</div>
+        </div>
+      </div>
+      <div class="item" data-group="luggage" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">衣物（確認天氣）</div>
+          <div class="item-note">3 月份各地氣溫差異大：上海 10-15°C、北京 0-10°C、廣東 15-22°C。</div>
+        </div>
+      </div>
+      <div class="item" data-group="luggage" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">護膚保濕用品</div>
+          <div class="item-note">大陸北方氣候乾燥，冬春季節特別明顯。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 注意事項 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🚨</span>
+      <span class="section-title">在當地注意事項</span>
+    </div>
+    <div class="note-card">
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🚫</span>網路封鎖</div>
+        <div class="note-body">Google、YouTube、Instagram、Facebook、Line 全部無法使用。請開 VPN 後才能正常使用。</div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">📸</span>拍照禁區</div>
+        <div class="note-body">軍事設施、政府建築附近禁止拍照。地鐵站通常禁止拍攝月台。</div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🗣️</span>政治敏感話題</div>
+        <div class="note-body">公開場合避免討論台灣獨立、西藏、新疆、天安門等敏感話題。</div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🚕</span>交通</div>
+        <div class="note-body">滴滴出行是主流叫車軟體（類似 Uber）。地鐵便宜又方便。避免搭乘黑車。</div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🍽️</span>飲食</div>
+        <div class="note-body">自來水不可生飲，喝瓶裝水或燒開水。路邊攤衛生狀況不一，初到先適應當地食物。</div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🆘</span>緊急狀況</div>
+        <div class="note-body">報警：110｜救護車：120｜消防：119<br>台灣駐陸辦事處急難救助：+86-400-808-0900</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 廣州專區 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🌆</span>
+      <span class="section-title">廣州專區資訊</span>
+    </div>
+
+    <div class="alert" style="background:#f0fff4; border-left-color:#48bb78;">
+      <strong>🌧️ 3 月廣州天氣提醒</strong>
+      氣溫約 15–22°C，潮濕多雨（回南天）。<br>
+      帶輕薄防水外套 + 折疊雨傘，避免穿不透氣的衣物。
+    </div>
+
+    <div class="note-card">
+
+      <div class="note-item">
+        <div class="note-title"><span class="icon">✈️</span>機場交通（白雲國際機場）</div>
+        <div class="note-body">
+          地鐵 3 號線 → 市區，約 40 分鐘，票價 ¥9 左右。<br>
+          機場巴士多條路線可選，便宜且直達各大飯店區。<br>
+          滴滴叫車到市中心約 ¥80–120（視塞車而定）。
+        </div>
+      </div>
+
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🚇</span>地鐵 & 交通</div>
+        <div class="note-body">
+          廣州地鐵非常發達，建議主要靠地鐵移動。<br>
+          買「羊城通」交通卡（地鐵站購買）可打折，押金 ¥20。<br>
+          或直接用 Alipay / WeChat Pay 掃碼進站。
+        </div>
+      </div>
+
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🗣️</span>語言小提示</div>
+        <div class="note-body">
+          廣州人日常說粵語，不一定說普通話。<br>
+          年輕人 & 商業區普通話沒問題，觀光區可用翻譯 App。<br>
+          推薦：百度翻譯（支援粵語）、有道翻譯。
+        </div>
+      </div>
+
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🍽️</span>廣州必吃</div>
+        <div class="note-body">
+          <strong>飲茶（早茶）：</strong>早上去茶樓點心，廣州特色！點蝦餃、燒賣、腸粉。<br>
+          <strong>白切雞：</strong>簡單清淡卻超鮮美。<br>
+          <strong>雲吞麵：</strong>細滑麵條 + 鮮蝦雲吞。<br>
+          <strong>燒鵝 / 叉燒：</strong>上下九步行街周邊很多老字號。<br>
+          <strong>老火靚湯：</strong>廣東人每天必喝的養生湯。
+        </div>
+      </div>
+
+      <div class="note-item">
+        <div class="note-title"><span class="icon">📍</span>推薦景點</div>
+        <div class="note-body">
+          <strong>廣州塔（小蠻腰）：</strong>610 公尺，夜景超美，可觀景也可體驗高空玻璃走廊。<br>
+          <strong>陳家祠：</strong>清朝嶺南建築代表，雕刻精細，免費參觀（門票約 ¥10）。<br>
+          <strong>上下九步行街：</strong>老廣州風味，美食街邊攤，適合下午閒逛。<br>
+          <strong>北京路步行街：</strong>熱鬧商業街，地下有千年古道遺址。<br>
+          <strong>沙面島：</strong>殖民時期歐式建築，很適合拍照散步。<br>
+          <strong>白雲山：</strong>市內最大公園，可健行，空氣好。
+        </div>
+      </div>
+
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🛍️</span>購物</div>
+        <div class="note-body">
+          <strong>天河城 / 正佳廣場：</strong>天河區頂級百貨，品牌齊全。<br>
+          <strong>上下九步行街：</strong>特色伴手禮、廣式食品、老字號。<br>
+          <strong>廣州塔旁太古倉：</strong>文創市集 + 餐廳。
+        </div>
+      </div>
+
+      <div class="note-item">
+        <div class="note-title"><span class="icon">⚠️</span>廣州特別注意</div>
+        <div class="note-body">
+          回南天（3 月常見）：地板、牆壁會滴水，非常潮濕，避免放貴重物品在地上。<br>
+          飲食衛生：路邊攤多，選擇人多的店較安全。<br>
+          地鐵高峰期（8–9 時、18–19 時）非常擁擠，建議錯峰出行。
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <button class="reset-btn" onclick="resetAll()">↺ 重設所有項目</button>
+
+  <footer>
+    台灣旅遊出發清單 · 資訊僅供參考，出發前請確認最新規定
+  </footer>
+
+</div>
+
+<script>
+  // Load saved state
+  function getState() {
+    try { return JSON.parse(localStorage.getItem('china-checklist') || '{}'); } catch { return {}; }
+  }
+  function saveState(state) {
+    localStorage.setItem('china-checklist', JSON.stringify(state));
+  }
+
+  function toggle(el) {
+    el.classList.toggle('checked');
+    const state = getState();
+    const key = el.dataset.group + '-' + Array.from(el.parentElement.children).indexOf(el);
+    state[key] = el.classList.contains('checked');
+    saveState(state);
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const items = document.querySelectorAll('.item[data-group]');
+    const total = items.length;
+    const done = document.querySelectorAll('.item[data-group].checked').length;
+
+    document.getElementById('progress-text').textContent = done + ' / ' + total;
+    document.getElementById('progress-fill').style.width = (total ? (done / total * 100) : 0) + '%';
+
+    document.getElementById('done-banner').classList.toggle('show', done === total && total > 0);
+
+    // Update per-group counts
+    ['docs', 'phone', 'money', 'health', 'luggage'].forEach(g => {
+      const gItems = document.querySelectorAll(`.item[data-group="${g}"]`);
+      const gDone = document.querySelectorAll(`.item[data-group="${g}"].checked`).length;
+      const el = document.getElementById('count-' + g);
+      if (el) el.textContent = gDone + '/' + gItems.length;
+    });
+  }
+
+  function resetAll() {
+    if (!confirm('確定要重設所有勾選項目嗎？')) return;
+    document.querySelectorAll('.item.checked').forEach(el => el.classList.remove('checked'));
+    saveState({});
+    updateProgress();
+  }
+
+  // Restore state on load
+  window.onload = function () {
+    const state = getState();
+    document.querySelectorAll('.item[data-group]').forEach((el, i) => {
+      const key = el.dataset.group + '-' + Array.from(el.parentElement.children).indexOf(el);
+      if (state[key]) el.classList.add('checked');
+    });
+    updateProgress();
+  };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首爾 Seoul 旅遊指南</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8; color: #1a202c; min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute; top: 18px; left: 16px;
+      color: rgba(255,255,255,0.85); font-size: 0.9rem;
+      text-decoration: none; display: flex; align-items: center; gap: 4px;
+    }
+    header {
+      color: white; padding: 24px 20px 20px;
+      text-align: center; position: relative;
+      background: linear-gradient(135deg, #1a202c 0%, #4a5568 100%);
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .container { padding: 16px 20px 80px; max-width: 600px; margin: 0 auto; }
+    .alert { border-left: 4px solid; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6; }
+    .alert.yellow { background: #fffbeb; border-left-color: #f59e0b; }
+    .alert.green { background: #f0fff4; border-left-color: #48bb78; }
+    .alert.blue { background: #ebf8ff; border-left-color: #4299e1; }
+    .alert.red { background: #fff5f5; border-left-color: #fc8181; }
+    .alert strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+    .section { margin-bottom: 20px; }
+    .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .section-icon { font-size: 1.2rem; }
+    .section-title { font-size: 1rem; font-weight: 700; color: #2d3748; }
+    .note-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); overflow: hidden; }
+    .note-item { padding: 14px 16px; border-bottom: 1px solid #f7fafc; font-size: 0.88rem; line-height: 1.6; }
+    .note-item:last-child { border-bottom: none; }
+    .note-title { font-weight: 700; margin-bottom: 4px; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; }
+    .note-body { color: #4a5568; line-height: 1.7; }
+    .note-body strong { color: #2d3748; }
+    .quick-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .fact-card { background: white; border-radius: 12px; padding: 14px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .fact-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .fact-label { font-size: 0.72rem; color: #a0aec0; margin-bottom: 2px; }
+    .fact-value { font-size: 0.9rem; font-weight: 700; color: #2d3748; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="korea-checklist.html" class="back-btn">← 返回</a>
+    <div class="flag">🇰🇷</div>
+    <h1>首爾 Seoul</h1>
+    <p>韓國首都・流行時尚・美食購物天堂</p>
+  </header>
+
+  <div class="container">
+    <div class="quick-facts">
+      <div class="fact-card">
+        <div class="fact-icon">🌡️</div>
+        <div class="fact-label">氣溫</div>
+        <div class="fact-value">3月 2–11°C</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🗣️</div>
+        <div class="fact-label">語言</div>
+        <div class="fact-value">韓語</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">💴</div>
+        <div class="fact-label">貨幣</div>
+        <div class="fact-value">韓元 KRW</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🚇</div>
+        <div class="fact-label">交通</div>
+        <div class="fact-value">地鐵超方便</div>
+      </div>
+    </div>
+
+    <div class="alert blue">
+      <strong>🌸 3月旅遊提示</strong>
+      3月首爾仍寒冷，早晚溫差大，厚外套不可少。3月底至4月初汝矣島春花節是賞櫻名所。
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🚇</span>
+        <span class="section-title">交通攻略</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">💳 T-money 卡</div>
+          <div class="note-body">地鐵、公車、計程車均可使用，可在超商（CU、GS25、7-Eleven）購買與儲值，搭乘大眾運輸享折扣優惠。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🗺️ 首爾地鐵</div>
+          <div class="note-body">共 9 條線超完整，覆蓋幾乎所有熱門景點，標示清楚，有英文站名，旅遊最方便的交通方式。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚕 Kakao T 叫車 App</div>
+          <div class="note-body">韓國最主流的叫車 App，支援外國信用卡付款，深夜或行李多時非常方便。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">✈️ 仁川機場快線 AREX</div>
+          <div class="note-body">直達列車（直通列車）到首爾站約 <strong>43 分鐘</strong>，一般列車約 60 分鐘但票價較便宜，停靠多站。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚌 機場巴士</div>
+          <div class="note-body">各路線直達明洞、弘大、江南等主要飯店區，適合行李多的旅客，車上有行李置放空間。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🗺️</span>
+        <span class="section-title">區域指南</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">💄 明洞 Myeongdong</div>
+          <div class="note-body">化妝品聖地、街邊美食、免稅店林立。OLIVE YOUNG、Innisfree、Laneige 旗艦店集中，晚間路邊小吃熱鬧非凡。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🎵 弘大 Hongdae</div>
+          <div class="note-body">年輕潮流聚集地，夜生活豐富，獨立品牌、街頭表演、個性咖啡廳眾多。大學生文化氣息濃厚。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">💎 江南 Gangnam</div>
+          <div class="note-body">COEX 購物中心、狎鷗亭潮流區、清潭洞精品名牌街。首爾最富裕的商業區，也是 K-POP 公司聚集地。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍵 仁寺洞 Insadong</div>
+          <div class="note-body">傳統文化街區，茶館、工藝品店、韓服體驗林立。Ssamziegil 創意市集值得一逛。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏯 北村韓屋村</div>
+          <div class="note-body">保留完好的韓式傳統建築群，拍照勝地。清晨人少最美，請注意住宅區噪音規範。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">☕ 益善洞 Ikseon-dong</div>
+          <div class="note-body">文青巷弄，老建築改建成個性咖啡廳與餐廳，氛圍復古又時髦，是首爾新興網美打卡熱點。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🛍️ 東大門 Dongdaemun</div>
+          <div class="note-body">24 小時購物區，Doota、Migliore 等商場通宵營業，凌晨批發市場也對散客開放。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🍜</span>
+        <span class="section-title">必吃美食</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🥩 韓式烤肉</div>
+          <div class="note-body"><strong>삼겹살</strong>（五花肉）、<strong>소고기</strong>（牛肉）搭配生菜包肉、大蒜、韓式辣醬，是韓國必吃經典。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌶️ 辣炒年糕 떡볶이</div>
+          <div class="note-body">韓國街邊最普遍的小吃，辣甜醬汁搭配軟糯年糕，通常附魚板、水煮蛋，路邊攤即可享用。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍗 炸雞 + 啤酒（치맥）</div>
+          <div class="note-body">韓劇常見的組合「치킨 + 맥주」，炸雞外酥內嫩，搭配韓國啤酒是傍晚的最佳享受。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍜 冷麵 평양냉면</div>
+          <div class="note-body">平壤冷麵以蕎麥麵條搭配清爽牛骨湯，口感特殊，是首爾傳統美食，適合怕辣的旅客。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍲 부대찌개 部隊鍋</div>
+          <div class="note-body">韓戰後發展出的獨特火鍋，加入午餐肉、香腸、拉麵、起司等食材，湯頭濃郁辛辣，份量十足。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🥘 海鮮煎餅 파전</div>
+          <div class="note-body">以蔥和海鮮為主料的韓式煎餅，外酥香、內鮮嫩，搭配馬格利米酒是最佳組合。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍱 韓定食</div>
+          <div class="note-body">傳統韓式套餐，一桌擺滿各式小菜、湯品、主食，體驗最道地的韓國飲食文化。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🛍️</span>
+        <span class="section-title">購物</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">💄 明洞藥妝</div>
+          <div class="note-body"><strong>OLIVE YOUNG</strong> 是韓國最大藥妝連鎖，品項齊全、價格透明，是必逛首選。各大韓妝品牌旗艦店也集中在明洞。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">👗 弘大獨立品牌</div>
+          <div class="note-body">設計師小店、古著店、街頭品牌林立，找尋獨一無二的韓流穿搭在弘大最有感。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌙 東大門凌晨批發</div>
+          <div class="note-body">凌晨 12 點至早上 5 點，批發市場對散客開放，服飾種類超多，喜歡挖寶的旅客不能錯過。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏪 免稅店</div>
+          <div class="note-body">樂天免稅店（明洞）、新羅免稅店（東大門）品牌齊全，護照出示即可購買，離境前機場提貨。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏪 便利商店</div>
+          <div class="note-body">CU、GS25 也是韓國購物好去處，韓國限定零食、飲品、泡麵種類豐富，記得多買幾包帶回家。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">💡</span>
+        <span class="section-title">在地小提示</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🚇 地鐵禮讓座</div>
+          <div class="note-body">韓國地鐵老弱婦孺座位（粉紅色座椅）<strong>絕對不能坐</strong>，即使車廂空無一人也應避免，這是重要的社會規範。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">💱 換錢技巧</div>
+          <div class="note-body">到明洞換匯所換韓元匯率最好，比機場和銀行划算許多。建議先在台灣換少量，抵達後再到明洞換。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🧾 退稅辦理</div>
+          <div class="note-body">購物滿一定金額可退稅，記得在機場辦理，仁川機場設有退稅專區，出關前後都有辦理窗口。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚶 排隊文化</div>
+          <div class="note-body">韓國人排隊文化嚴謹，公車、地鐵、餐廳都會自動排隊，請遵守秩序，切勿插隊。</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      台灣旅遊出發清單 · 資訊僅供參考，出發前請確認最新規定
+    </footer>
+  </div>
+</body>
+</html>

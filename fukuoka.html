@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>福岡 Fukuoka — 旅遊指南</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8; color: #1a202c; min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute; top: 18px; left: 16px;
+      color: rgba(255,255,255,0.85); font-size: 0.9rem;
+      text-decoration: none; display: flex; align-items: center; gap: 4px;
+    }
+    header {
+      color: white; padding: 24px 20px 20px;
+      text-align: center; position: relative;
+      background: linear-gradient(135deg, #702459 0%, #b83280 100%);
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .container { padding: 16px 20px 80px; max-width: 600px; margin: 0 auto; }
+    .alert { border-left: 4px solid; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6; }
+    .alert.yellow { background: #fffbeb; border-left-color: #f59e0b; }
+    .alert.green { background: #f0fff4; border-left-color: #48bb78; }
+    .alert.blue { background: #ebf8ff; border-left-color: #4299e1; }
+    .alert strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+    .section { margin-bottom: 20px; }
+    .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .section-icon { font-size: 1.2rem; }
+    .section-title { font-size: 1rem; font-weight: 700; color: #2d3748; }
+    .note-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); overflow: hidden; }
+    .note-item { padding: 14px 16px; border-bottom: 1px solid #f7fafc; font-size: 0.88rem; line-height: 1.6; }
+    .note-item:last-child { border-bottom: none; }
+    .note-title { font-weight: 700; margin-bottom: 4px; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; }
+    .note-body { color: #4a5568; line-height: 1.7; }
+    .note-body strong { color: #2d3748; }
+    .quick-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .fact-card { background: white; border-radius: 12px; padding: 14px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .fact-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .fact-label { font-size: 0.72rem; color: #a0aec0; margin-bottom: 2px; }
+    .fact-value { font-size: 0.9rem; font-weight: 700; color: #2d3748; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="japan-checklist.html" class="back-btn">← 返回</a>
+    <div class="flag">🇯🇵</div>
+    <h1>福岡 Fukuoka</h1>
+    <p>九州之都・博多拉麵與屋台文化</p>
+  </header>
+
+  <div class="container">
+    <div class="quick-facts">
+      <div class="fact-card">
+        <div class="fact-icon">🌡️</div>
+        <div class="fact-label">氣溫</div>
+        <div class="fact-value">3月 8–15°C</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🗣️</div>
+        <div class="fact-label">語言</div>
+        <div class="fact-value">日語／博多方言</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">💴</div>
+        <div class="fact-label">貨幣</div>
+        <div class="fact-value">日圓 JPY</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🍥</div>
+        <div class="fact-label">特色</div>
+        <div class="fact-value">拉麵／屋台</div>
+      </div>
+    </div>
+
+    <div class="alert green">
+      <strong>✈️ 距台灣最近的日本大城市</strong>
+      福岡是九州最大城市，也是距離台灣最近的日本主要城市（飛行約 1.5 小時）。3月氣候舒適，是日本最早開始賞梅的地方之一。
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🚇</span>
+        <span class="section-title">交通攻略</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">✈️ 福岡機場（超近！）</div>
+          <div class="note-body">福岡機場距市中心只需地鐵 <strong>2 站</strong>，約 5 分鐘即可抵達博多站，是日本離市區最近的主要機場之一。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚇 福岡市地鐵</div>
+          <div class="note-body">共 3 條路線（空港線、箱崎線、七隈線），覆蓋福岡機場、博多、天神、中洲川端等主要景點與商圈。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚃 西鐵電車</div>
+          <div class="note-body">西日本鐵道從天神站出發，可前往太宰府天滿宮（約 40 分鐘）、柳川（約 1 小時），是近郊一日遊的主要交通。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚄 JR 九州新幹線</div>
+          <div class="note-body">從博多站搭乘新幹線，可輕鬆前往長崎（約 30 分）、佐世保、熊本、鹿兒島等九州各大城市。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🗺️</span>
+        <span class="section-title">區域指南</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🛍️ 天神</div>
+          <div class="note-body">福岡最大的購物商圈，三越、大丸、PARCO 等百貨林立，天神地下街長達 600 公尺，是雨天購物的好去處。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚉 博多</div>
+          <div class="note-body">博多車站商圈有 JR 博多城（含阪急百貨）、KITTE 博多等複合設施，博多舊街區保有傳統廟宇與老鋪。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏮 中洲</div>
+          <div class="note-body">福岡的夜生活中心，那珂川與博多川之間的島狀地帶，屋台（路邊攤）最集中的區域，夜晚霓虹閃耀。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌿 大濠公園</div>
+          <div class="note-body">福岡最大的公園，以中央大湖為中心，可租船遊湖、沿湖慢跑，湖畔有美術館，是市民週末休憩勝地。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🦁 南公園</div>
+          <div class="note-body">福岡市立動物園所在地，也是春季賞櫻名所，公園內景色優美，適合一家大小輕鬆散步。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🍜</span>
+        <span class="section-title">必吃美食（重點）</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🍥 博多豚骨拉麵</div>
+          <div class="note-body"><strong>一蘭拉麵的發源地</strong>就在福岡！博多豚骨以乳白濃郁湯底與細直麵條著稱，可加點替玉（追加麵條）不另計費。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏮 屋台文化</div>
+          <div class="note-body">夜晚在中洲、天神、長濱三大屋台區的路邊攤用餐，是福岡獨特的飲食文化。點拉麵、餃子、關東煮配燒酒，與老闆搭話別有樂趣。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🥚 明太子</div>
+          <div class="note-body">醃漬鱈魚卵，福岡最著名的伴手禮。福岡是明太子的發源地，可在博多站、機場購買各大品牌，生、乾各式口味。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍲 水炊雞鍋</div>
+          <div class="note-body">以整雞長時間熬煮的清澈雞骨湯底火鍋，先喝一碗原湯感受濃縮精華，再放入雞肉與蔬菜涮煮，清淡鮮甜。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🫕 牛腸鍋（もつ鍋）</div>
+          <div class="note-body">以牛腸（內臟）為主食材的火鍋，加入大量高麗菜與韭菜，醬油或味噌湯底，是福岡居民最愛的家常料理。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🐟 胡麻鯖魚</div>
+          <div class="note-body">新鮮鯖魚生魚片醃入芝麻醬汁，是福岡特有的海鮮料理，鯖魚品質極高，生食不腥，口感滑順鮮美。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🗺️</span>
+        <span class="section-title">近郊一日遊</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">⛩️ 太宰府天滿宮</div>
+          <div class="note-body">供奉學問之神菅原道真，是九州最重要的神社之一。梅花名所，3 月梅花盛開。從天神搭西鐵特急約 <strong>40 分鐘</strong>。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚣 柳川</div>
+          <div class="note-body">以古城護城河改建的運河水鄉，搭乘傳統小舟遊覽水道是柳川最著名的體驗，沿途欣賞水鄉風情。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏯 唐津城</div>
+          <div class="note-body">別名「舞鶴城」，坐落於海灣旁的山丘，可俯瞰唐津灣，附近的虹之松原是日本三大松原之一。車程約 1 小時。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">💡</span>
+        <span class="section-title">在地小提示</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">😊 福岡人好客</div>
+          <div class="note-body">福岡人以熱情好客著稱，對外國旅客非常友善，屋台老闆通常樂於與客人交流，不需擔心語言障礙。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">💰 物價比東京便宜</div>
+          <div class="note-body">福岡整體物價明顯低於東京，餐廳、住宿、娛樂費用都相對親民，同樣的預算可以玩得更豐富。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌙 屋台開店時間</div>
+          <div class="note-body">屋台通常在晚上 <strong>18 點後</strong>才陸續開攤，22 點後達到高峰，多在凌晨 1–2 點收攤，是正宗的深夜美食文化。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🎁 伴手禮購買</div>
+          <div class="note-body">博多車站（JR 博多城）與福岡機場都有豐富的九州伴手禮，明太子、博多人形、博多織等特色商品一次購齊。</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>台灣旅遊出發清單 · 資訊僅供參考，出發前請確認最新規定</footer>
+  </div>
+</body>
+</html>

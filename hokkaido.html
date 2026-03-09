@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>北海道 Hokkaido — 旅遊指南</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8; color: #1a202c; min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute; top: 18px; left: 16px;
+      color: rgba(255,255,255,0.85); font-size: 0.9rem;
+      text-decoration: none; display: flex; align-items: center; gap: 4px;
+    }
+    header {
+      color: white; padding: 24px 20px 20px;
+      text-align: center; position: relative;
+      background: linear-gradient(135deg, #2c5282 0%, #4299e1 100%);
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .container { padding: 16px 20px 80px; max-width: 600px; margin: 0 auto; }
+    .alert { border-left: 4px solid; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6; }
+    .alert.yellow { background: #fffbeb; border-left-color: #f59e0b; }
+    .alert.green { background: #f0fff4; border-left-color: #48bb78; }
+    .alert.blue { background: #ebf8ff; border-left-color: #4299e1; }
+    .alert strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+    .section { margin-bottom: 20px; }
+    .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .section-icon { font-size: 1.2rem; }
+    .section-title { font-size: 1rem; font-weight: 700; color: #2d3748; }
+    .note-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); overflow: hidden; }
+    .note-item { padding: 14px 16px; border-bottom: 1px solid #f7fafc; font-size: 0.88rem; line-height: 1.6; }
+    .note-item:last-child { border-bottom: none; }
+    .note-title { font-weight: 700; margin-bottom: 4px; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; }
+    .note-body { color: #4a5568; line-height: 1.7; }
+    .note-body strong { color: #2d3748; }
+    .quick-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .fact-card { background: white; border-radius: 12px; padding: 14px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .fact-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .fact-label { font-size: 0.72rem; color: #a0aec0; margin-bottom: 2px; }
+    .fact-value { font-size: 0.9rem; font-weight: 700; color: #2d3748; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="japan-checklist.html" class="back-btn">← 返回</a>
+    <div class="flag">🇯🇵</div>
+    <h1>北海道 Hokkaido</h1>
+    <p>北國大地・海鮮與雪景天堂</p>
+  </header>
+
+  <div class="container">
+    <div class="quick-facts">
+      <div class="fact-card">
+        <div class="fact-icon">🌡️</div>
+        <div class="fact-label">氣溫</div>
+        <div class="fact-value">3月 −3～4°C 札幌</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🗣️</div>
+        <div class="fact-label">語言</div>
+        <div class="fact-value">日語</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">💴</div>
+        <div class="fact-label">貨幣</div>
+        <div class="fact-value">日圓 JPY</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">⛷️</div>
+        <div class="fact-label">特色</div>
+        <div class="fact-value">滑雪／海鮮</div>
+      </div>
+    </div>
+
+    <div class="alert blue">
+      <strong>❄️ 冬季裝備提醒</strong>
+      3月北海道仍是冬季，需要厚重保暖衣物（羽絨外套、毛帽、手套、雪靴）。尼彩（Niseko）等滑雪場仍在營業！雪地行走請穿防滑雪靴。
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🚇</span>
+        <span class="section-title">交通攻略</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">✈️ 新千歲機場</div>
+          <div class="note-body">北海道的主要航空門戶，距札幌市區搭 JR 快速 Aiport 約 <strong>40 分鐘</strong>，班次密集方便。機場內也有美食區值得逛逛。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚉 JR 北海道</div>
+          <div class="note-body">JR 連接北海道主要城市（札幌、函館、旭川、釧路等），持 JR Pass 可自由搭乘，但班次較少需事先查詢。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚗 市區外強烈建議租車</div>
+          <div class="note-body">北海道幅員遼闊，景點分散，市區外幾乎沒有大眾交通工具，<strong>租車是必要的選擇</strong>。需備有效國際駕照。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚇 札幌市區交通</div>
+          <div class="note-body">札幌市區有地鐵（3條線）和路面電車（市電），足以覆蓋大通公園、薄野、時計台等主要景點。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🗺️</span>
+        <span class="section-title">區域指南</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🏙️ 札幌</div>
+          <div class="note-body">北海道首府，大通公園（冬季雪祭舉辦地）、時計台、薄野夜生活區、狸小路商店街，是進入北海道的主要基地。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚢 小樽</div>
+          <div class="note-body">浪漫的運河城市，玻璃工藝聞名全日本，海鮮丼物超所值，從札幌搭 JR 約 30 分鐘，適合一日遊。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌸 富良野 / 美瑛</div>
+          <div class="note-body">以薰衣草花田和連綿丘陵景色著稱（夏季最美），冬季也有壯觀雪景，是攝影愛好者的聖地。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">⛷️ 尼彩 / 留壽都</div>
+          <div class="note-body">Niseko 是亞洲頂級滑雪度假區，粉雪品質世界知名，留壽都也有完善的滑雪設施，3月仍可盡情滑雪。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌃 函館</div>
+          <div class="note-body">函館夜景是日本三大夜景之一（自函館山俯瞰），朝市有超新鮮海鮮，元町西洋建築群充滿異國風情。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🍜</span>
+        <span class="section-title">必吃美食</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🦀 海鮮</div>
+          <div class="note-body">帝王蟹、海膽（ウニ）、鮭魚卵（いくら）、牡蠣，北海道海鮮在全日本品質最頂尖，價格也相對合理。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍛 湯咖哩</div>
+          <div class="note-body">札幌發源的特色料理，湯底清爽、香料豐富，蔬菜與肉類以湯匙舀食，是北海道必嚐的在地美食。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🐑 成吉思汗烤羊肉</div>
+          <div class="note-body">北海道羊肉料理代表，<strong>Sapporo Beer Garden</strong> 提供最道地的烤羊肉吃到飽，搭配北海道啤酒絕配。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍥 北海道拉麵</div>
+          <div class="note-body">三大流派各有特色：<strong>味噌拉麵</strong>（札幌）、<strong>鹽味拉麵</strong>（函館）、<strong>醬油拉麵</strong>（旭川），各地風格不同。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🥛 乳製品</div>
+          <div class="note-body">北海道牛乳、奶油、起司、霜淇淋品質是全日本第一，在當地喝到的牛奶特別香濃甜美。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🐟 石狩鍋</div>
+          <div class="note-body">以鮭魚為主食材的北海道傳統火鍋，加入蔬菜、豆腐，以味噌為湯底，溫暖身心的冬季料理。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">⛷️</span>
+        <span class="section-title">冬季活動（3月）</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🎿 滑雪場</div>
+          <div class="note-body">Niseko、留壽都（Rusutsu）、富良野滑雪場 3 月份通常仍在正常營業，粉雪品質依然絕佳。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🥾 雪地健行</div>
+          <div class="note-body">穿著雪鞋（Snow Shoes）在原始雪地中健行，欣賞冬日森林景色，許多滑雪度假村都有提供此行程。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">♨️ 溫泉</div>
+          <div class="note-body"><strong>登別</strong>（地獄谷硫磺泉）、<strong>洞爺湖</strong>（湖景溫泉）、<strong>定山溪</strong>（距札幌最近），是冬季最享受的活動。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">💡</span>
+        <span class="section-title">在地小提示</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🚗 國際駕照</div>
+          <div class="note-body">租車需要有效的國際駕照（台灣駕照 + 日本語譯本），出發前請至監理站辦理，費用低廉非常值得。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">❄️ 雪地駕車</div>
+          <div class="note-body">冬季租車公司會自動配備雪胎，但雪地駕車需謹慎，慢速行駛、保持車距，遇結冰路面特別危險。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🦞 食材品質</div>
+          <div class="note-body">北海道農漁產品是全日本最高品質的代名詞，無論是海鮮、蔬菜或乳製品，都值得多多品嚐。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🧥 防寒準備</div>
+          <div class="note-body">氣溫極低（可達 -10°C 以下），請備妥羽絨外套、毛帽、保暖手套、雪靴、暖暖包等防寒裝備。</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>台灣旅遊出發清單 · 資訊僅供參考，出發前請確認最新規定</footer>
+  </div>
+</body>
+</html>

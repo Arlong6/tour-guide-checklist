@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大阪 Osaka — 旅遊指南</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8; color: #1a202c; min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute; top: 18px; left: 16px;
+      color: rgba(255,255,255,0.85); font-size: 0.9rem;
+      text-decoration: none; display: flex; align-items: center; gap: 4px;
+    }
+    header {
+      color: white; padding: 24px 20px 20px;
+      text-align: center; position: relative;
+      background: linear-gradient(135deg, #7b341e 0%, #c05621 100%);
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .container { padding: 16px 20px 80px; max-width: 600px; margin: 0 auto; }
+    .alert { border-left: 4px solid; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6; }
+    .alert.yellow { background: #fffbeb; border-left-color: #f59e0b; }
+    .alert.green { background: #f0fff4; border-left-color: #48bb78; }
+    .alert.blue { background: #ebf8ff; border-left-color: #4299e1; }
+    .alert strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+    .section { margin-bottom: 20px; }
+    .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .section-icon { font-size: 1.2rem; }
+    .section-title { font-size: 1rem; font-weight: 700; color: #2d3748; }
+    .note-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); overflow: hidden; }
+    .note-item { padding: 14px 16px; border-bottom: 1px solid #f7fafc; font-size: 0.88rem; line-height: 1.6; }
+    .note-item:last-child { border-bottom: none; }
+    .note-title { font-weight: 700; margin-bottom: 4px; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; }
+    .note-body { color: #4a5568; line-height: 1.7; }
+    .note-body strong { color: #2d3748; }
+    .quick-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .fact-card { background: white; border-radius: 12px; padding: 14px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .fact-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .fact-label { font-size: 0.72rem; color: #a0aec0; margin-bottom: 2px; }
+    .fact-value { font-size: 0.9rem; font-weight: 700; color: #2d3748; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="japan-checklist.html" class="back-btn">← 返回</a>
+    <div class="flag">🇯🇵</div>
+    <h1>大阪 Osaka</h1>
+    <p>天下廚房・關西美食之都</p>
+  </header>
+
+  <div class="container">
+    <div class="quick-facts">
+      <div class="fact-card">
+        <div class="fact-icon">🌡️</div>
+        <div class="fact-label">氣溫</div>
+        <div class="fact-value">3月 7–14°C</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🗣️</div>
+        <div class="fact-label">語言</div>
+        <div class="fact-value">日語／關西腔</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">💴</div>
+        <div class="fact-label">貨幣</div>
+        <div class="fact-value">日圓 JPY</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🕐</div>
+        <div class="fact-label">時區</div>
+        <div class="fact-value">UTC+9</div>
+      </div>
+    </div>
+
+    <div class="alert green">
+      <strong>🌸 天氣提醒</strong>
+      大阪天氣比東京稍暖，3月底大阪城公園有美麗櫻花，是大阪最受歡迎的賞花勝地之一。
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🚇</span>
+        <span class="section-title">交通攻略</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🪙 ICOCA 卡 / Suica</div>
+          <div class="note-body">ICOCA 是關西地區的 IC 卡，與 Suica 互通使用，可搭乘大阪地鐵、JR、私鐵及便利商店消費。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🎟️ 大阪地鐵一日券</div>
+          <div class="note-body">大阪地鐵（Osaka Metro）提供一日、二日乘車券，可無限次搭乘市內地鐵，適合密集觀光使用。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚉 JR 大阪環狀線</div>
+          <div class="note-body">類似東京山手線，環繞大阪市區運行，連接大阪城公園、鶴橋、天王寺等主要景點。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">✈️ 關西機場特急 Haruka</div>
+          <div class="note-body">從關西機場搭乘 JR 特急 Haruka 至梅田（大阪站）約 75 分鐘，也可搭機場快線到難波。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🎫 大阪 Amazing Pass</div>
+          <div class="note-body">含大阪地鐵無限乘坐及多個景點免費入場（如通天閣、大阪城天守閣等），適合景點豐富的行程。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🗺️</span>
+        <span class="section-title">區域指南</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🐙 道頓堀</div>
+          <div class="note-body">大阪最具代表性的地標，固力果跑步人看板是必拍景點，章魚燒、大阪燒餐廳激烈競爭。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🛍️ 心齋橋</div>
+          <div class="note-body">大阪最繁盛的購物商圈，從高檔精品到平價服飾應有盡有，與道頓堀步行可達。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏢 梅田</div>
+          <div class="note-body">大阪站周邊的商業核心，Grand Front 大阪、大丸百貨等大型商場雲集，地下街也非常壯觀。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏪 難波</div>
+          <div class="note-body">大型購物中心集中區，難波 City、NAMBA Parks 等，步行即可抵達心齋橋商店街。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🗼 天王寺</div>
+          <div class="note-body">通天閣是大阪的象徵性建築，周邊的新世界是昭和懷舊風情街區，串炸店林立。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌸 大阪城公園</div>
+          <div class="note-body">大阪城天守閣雄偉壯觀，公園內種植大量櫻花樹，3月底至4月初是賞花最佳時節。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🍜</span>
+        <span class="section-title">必吃美食</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🐙 章魚燒</div>
+          <div class="note-body"><strong>道頓堀章魚心</strong>、<strong>くくる</strong> 等名店，現點現做，外酥內嫩，是大阪最具代表性的庶民美食。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🥞 大阪燒</div>
+          <div class="note-body"><strong>千房</strong> 是大阪燒名店，厚實蓬鬆的麵糊加上豬肉、海鮮，淋上特製醬料與美乃滋，香氣十足。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍢 串炸</div>
+          <div class="note-body">新世界是串炸（串かつ）的發源地，各種食材裹粉油炸，沾醬規定「不能回沾」是當地特色文化。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🐡 河豚料理</div>
+          <div class="note-body">大阪是日本河豚（ふぐ）消費量最大的城市，道頓堀周邊有多家專門店提供河豚料理。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🥟 551 蓬萊豬肉包</div>
+          <div class="note-body">大阪最著名的伴手禮，鮮嫩多汁的豬肉包，在大阪各車站及機場均有販售，需趁熱食用。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🦀 黑門市場海鮮</div>
+          <div class="note-body">號稱「大阪的廚房」，新鮮海鮮、蔬果、肉類應有盡有，也可直接在攤位享用現剝海鮮。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🛍️</span>
+        <span class="section-title">購物</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🛒 心齋橋商店街</div>
+          <div class="note-body">長達 600 公尺的有蓋拱廊商店街，集結各大品牌、藥妝店、流行服飾，是大阪購物首選。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">💊 道頓堀藥妝激戰區</div>
+          <div class="note-body">松本清、SUNDRUG、大國藥妝等多家藥妝店密集競爭，價格優惠，購買保養品、日用品超划算。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏢 梅田 Grand Front</div>
+          <div class="note-body">大阪站旁的複合式商業設施，集購物、餐廳、展覽於一體，是時尚品牌與設計選物的好去處。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">💻 日本橋電器街</div>
+          <div class="note-body">大阪版的秋葉原，電器、動漫周邊、二手遊戲集中，從難波步行可抵達。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🐟 黑門市場食材伴手禮</div>
+          <div class="note-body">新鮮昆布、海産乾貨、醬料等高品質食材伴手禮，是帶回台灣送禮的絕佳選擇。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">💡</span>
+        <span class="section-title">在地小提示</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🚶 手扶梯站位</div>
+          <div class="note-body">大阪人站手扶梯靠右側（與東京靠左相反！），左側留給趕時間的人通行，請注意遵守當地習慣。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🗣️ 關西腔問候</div>
+          <div class="note-body">關西腔充滿活力，當地人常說「儲かりまっか」（生意好嗎？）作問候，反映大阪濃厚的商人文化。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">😊 大阪人個性</div>
+          <div class="note-body">大阪人外向熱情，比東京人更好搭話，對外國旅客通常非常友善，遇到問題不妨開口詢問。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌙 用餐時間</div>
+          <div class="note-body">大阪人吃飯時間較晚，許多餐廳晚上 19–20 時才進入高峰，屋台等夜食文化也相當盛行。</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>台灣旅遊出發清單 · 資訊僅供參考，出發前請確認最新規定</footer>
+  </div>
+</body>
+</html>

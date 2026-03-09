@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>京都 Kyoto — 旅遊指南</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8; color: #1a202c; min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute; top: 18px; left: 16px;
+      color: rgba(255,255,255,0.85); font-size: 0.9rem;
+      text-decoration: none; display: flex; align-items: center; gap: 4px;
+    }
+    header {
+      color: white; padding: 24px 20px 20px;
+      text-align: center; position: relative;
+      background: linear-gradient(135deg, #553c9a 0%, #805ad5 100%);
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .container { padding: 16px 20px 80px; max-width: 600px; margin: 0 auto; }
+    .alert { border-left: 4px solid; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6; }
+    .alert.yellow { background: #fffbeb; border-left-color: #f59e0b; }
+    .alert.green { background: #f0fff4; border-left-color: #48bb78; }
+    .alert.blue { background: #ebf8ff; border-left-color: #4299e1; }
+    .alert strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+    .section { margin-bottom: 20px; }
+    .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .section-icon { font-size: 1.2rem; }
+    .section-title { font-size: 1rem; font-weight: 700; color: #2d3748; }
+    .note-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); overflow: hidden; }
+    .note-item { padding: 14px 16px; border-bottom: 1px solid #f7fafc; font-size: 0.88rem; line-height: 1.6; }
+    .note-item:last-child { border-bottom: none; }
+    .note-title { font-weight: 700; margin-bottom: 4px; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; }
+    .note-body { color: #4a5568; line-height: 1.7; }
+    .note-body strong { color: #2d3748; }
+    .quick-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .fact-card { background: white; border-radius: 12px; padding: 14px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .fact-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .fact-label { font-size: 0.72rem; color: #a0aec0; margin-bottom: 2px; }
+    .fact-value { font-size: 0.9rem; font-weight: 700; color: #2d3748; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="japan-checklist.html" class="back-btn">← 返回</a>
+    <div class="flag">🇯🇵</div>
+    <h1>京都 Kyoto</h1>
+    <p>千年古都・日本文化之心</p>
+  </header>
+
+  <div class="container">
+    <div class="quick-facts">
+      <div class="fact-card">
+        <div class="fact-icon">🌡️</div>
+        <div class="fact-label">氣溫</div>
+        <div class="fact-value">3月 5–14°C</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🗣️</div>
+        <div class="fact-label">語言</div>
+        <div class="fact-value">日語／京都腔</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">💴</div>
+        <div class="fact-label">貨幣</div>
+        <div class="fact-value">日圓 JPY</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🚌</div>
+        <div class="fact-label">交通</div>
+        <div class="fact-value">巴士為主</div>
+      </div>
+    </div>
+
+    <div class="alert yellow">
+      <strong>🌸 賞櫻旺季警示</strong>
+      3月底至4月初是京都賞櫻旺季，哲學之道、嵐山、円山公園人潮極多。住宿建議提早半年以上預訂，價格也會大幅上漲。
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🚇</span>
+        <span class="section-title">交通攻略</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🚌 市區巴士</div>
+          <div class="note-body">京都市巴士覆蓋主要景點，一日券 <strong>¥600</strong> 可無限乘坐，是遊覽京都最便利的方式。多搭幾次就回本。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚉 京都地鐵</div>
+          <div class="note-body">烏丸線（南北向）與東西線（東西向）構成地鐵主幹，連接京都站、四条、烏丸御池等核心區域。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚄 從大阪前往</div>
+          <div class="note-body">搭乘 JR 新快速從大阪（大阪站）至京都（京都站）約 <strong>15 分鐘</strong>，班次密集，非常方便。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚃 阪急電鐵</div>
+          <div class="note-body">阪急京都線連接大阪梅田與京都河原町（祇園、四条一帶），票價比 JR 便宜，也是熱門選擇。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚕 計程車</div>
+          <div class="note-body">市內計程車較貴，但前往郊區景點（如嵐山、貴船）時，多人共乘可能比巴士更方便快速。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🗺️</span>
+        <span class="section-title">景點分區</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🎋 嵐山</div>
+          <div class="note-body">竹林小徑是京都最具代表性的景色，渡月橋橫跨桂川，天龍寺庭園以借景技法聞名，是世界文化遺產。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">⛩️ 東山 / 清水寺</div>
+          <div class="note-body">清水寺的舞台懸空於山崖，三年坂、二年坂充滿京都風情的商店，地主神社是求姻緣的聖地。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🦊 伏見稻荷大社</div>
+          <div class="note-body">綿延 4 公里的千本鳥居是最受外國旅客歡迎的景點，夜間也開放，黃昏後人潮較少氣氛神秘。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">✨ 金閣寺</div>
+          <div class="note-body">三層樓的金色舍利殿倒映於鏡湖池，是京都最具代表性的建築，世界文化遺產之一。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌸 銀閣寺 / 哲學之道</div>
+          <div class="note-body">銀閣寺以禪意庭園著稱，旁邊的哲學之道沿琵琶湖疏水道種植數百棵櫻花樹，是賞櫻必訪路線。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🎭 祇園</div>
+          <div class="note-body">京都最著名的花街，舞妓文化保存至今，八坂神社、花見小路石板小巷充滿江戶時代的歷史氛圍。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🍜</span>
+        <span class="section-title">必吃美食</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🍱 懷石料理</div>
+          <div class="note-body">日本最精緻的傳統料理，多道菜依序上桌，食材與器皿均極為講究。京都是懷石料理的發源地。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🥛 湯葉豆腐料理</div>
+          <div class="note-body">京都特有的精進料理（素食），湯葉（豆皮）口感細嫩，配合嫩豆腐是京都清淡飲食文化的體現。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍵 抹茶甜點</div>
+          <div class="note-body"><strong>中村藤吉</strong>（宇治）的抹茶蕨餅、<strong>茶寮都路里</strong> 的抹茶聖代，是京都訪客幾乎人手一份的甜點。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🐟 錦市場</div>
+          <div class="note-body">號稱「京都的廚房」，長約 390 公尺，販售醃漬物、海鮮、豆腐等京都特色食材，也可直接試吃購買。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍥 京都拉麵</div>
+          <div class="note-body"><strong>第一旭</strong>（醬油豚骨）、<strong>新福菜館</strong>（黑色濃郁醬油），京都車站附近，清晨即開始營業。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🛍️</span>
+        <span class="section-title">購物 & 體驗</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🥒 錦市場食材伴手禮</div>
+          <div class="note-body">京漬物（西京漬、千枚漬）、抹茶製品、乾貨等，是帶回台灣最受歡迎的京都伴手禮。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏺 清水坂陶器</div>
+          <div class="note-body">清水寺下坡道沿途有多家陶器店，出售京燒、清水燒等傳統工藝品，是送禮自用的好選擇。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍡 和菓子</div>
+          <div class="note-body"><strong>鶴屋吉信</strong> 的京菓子、<strong>聖護院八ツ橋</strong> 的生八橋，是最具代表性的京都甜點伴手禮。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">👘 和服體驗</div>
+          <div class="note-body">祇園、嵐山周邊有眾多和服出租店，穿著和服遊覽古都是難忘的體驗，通常包含頭髮造型服務。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">💡</span>
+        <span class="section-title">在地小提示</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">⛩️ 景點取捨</div>
+          <div class="note-body">京都神社寺廟超過 1,600 座，不可能全部參觀。建議事先規劃，選擇 2–3 個重點區域深度遊覽。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚫 祇園禮儀</div>
+          <div class="note-body">祇園花街的私人茶屋（お茶屋）禁止外人隨意進入，也請勿追逐、騷擾舞妓拍照，尊重當地文化。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🤫 寺廟禮儀</div>
+          <div class="note-body">在寺廟與神社內請保持安靜，禁止喧嘩。拍照前請確認是否允許（部分區域禁止拍攝）。</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>台灣旅遊出發清單 · 資訊僅供參考，出發前請確認最新規定</footer>
+  </div>
+</body>
+</html>

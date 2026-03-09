@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>北京 Beijing 旅遊指南</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8; color: #1a202c; min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute; top: 18px; left: 16px;
+      color: rgba(255,255,255,0.85); font-size: 0.9rem;
+      text-decoration: none; display: flex; align-items: center; gap: 4px;
+    }
+    header {
+      color: white; padding: 24px 20px 20px;
+      text-align: center; position: relative;
+      background: linear-gradient(135deg, #7b341e 0%, #c05621 100%);
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .container { padding: 16px 20px 80px; max-width: 600px; margin: 0 auto; }
+    .alert { border-left: 4px solid; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6; }
+    .alert.yellow { background: #fffbeb; border-left-color: #f59e0b; }
+    .alert.green { background: #f0fff4; border-left-color: #48bb78; }
+    .alert.blue { background: #ebf8ff; border-left-color: #4299e1; }
+    .alert.red { background: #fff5f5; border-left-color: #fc8181; }
+    .alert strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+    .section { margin-bottom: 20px; }
+    .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .section-icon { font-size: 1.2rem; }
+    .section-title { font-size: 1rem; font-weight: 700; color: #2d3748; }
+    .note-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); overflow: hidden; }
+    .note-item { padding: 14px 16px; border-bottom: 1px solid #f7fafc; font-size: 0.88rem; line-height: 1.6; }
+    .note-item:last-child { border-bottom: none; }
+    .note-title { font-weight: 700; margin-bottom: 4px; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; }
+    .note-body { color: #4a5568; line-height: 1.7; }
+    .note-body strong { color: #2d3748; }
+    .quick-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .fact-card { background: white; border-radius: 12px; padding: 14px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .fact-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .fact-label { font-size: 0.72rem; color: #a0aec0; margin-bottom: 2px; }
+    .fact-value { font-size: 0.9rem; font-weight: 700; color: #2d3748; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="china-checklist.html" class="back-btn">← 返回</a>
+    <div class="flag">🇨🇳</div>
+    <h1>北京 Beijing</h1>
+    <p>中國首都・千年古都・歷史人文薈萃</p>
+  </header>
+
+  <div class="container">
+    <div class="quick-facts">
+      <div class="fact-card">
+        <div class="fact-icon">🌡️</div>
+        <div class="fact-label">氣溫</div>
+        <div class="fact-value">3月 3–13°C</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🗣️</div>
+        <div class="fact-label">語言</div>
+        <div class="fact-value">普通話</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">💴</div>
+        <div class="fact-label">貨幣</div>
+        <div class="fact-value">人民幣 CNY</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🏯</div>
+        <div class="fact-label">特色</div>
+        <div class="fact-value">歷史古蹟</div>
+      </div>
+    </div>
+
+    <div class="alert yellow">
+      <strong>🌬️ 3月天氣與準備提示</strong>
+      3月北京乾燥多風，沙塵暴季節開始，建議帶 N95 口罩和護膚乳液。記得出發前裝好 VPN！
+    </div>
+
+    <div class="alert red">
+      <strong>🪪 入境與景點預約提醒</strong>
+      台灣人入境中國大陸需攜帶台胞證，護照可作為輔助文件。故宮等熱門景點需提前網路預約，建議出發前在台灣完成訂票。
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🚇</span>
+        <span class="section-title">交通攻略</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🗺️ 北京地鐵</div>
+          <div class="note-body">線路眾多但站距較大，景點間移動通常需換乘。Alipay（支付寶）或 WeChat Pay 掃碼進站，也可購買一次性票或北京一卡通。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">📱 Alipay / WeChat Pay</div>
+          <div class="note-body">北京幾乎全面無現金，建議出發前開通支付寶或微信支付外國人版，可用於地鐵、餐廳、購物、景點門票購買。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚕 滴滴出行</div>
+          <div class="note-body">北京計程車誠信有起步價，也可用滴滴叫車，長城等較遠景點建議包車或報名當地一日遊行程。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">✈️ 首都機場 T3</div>
+          <div class="note-body">搭地鐵機場線從 T3 航廈到東直門約 <strong>30 分鐘</strong>，再轉乘 2 號線可達市中心各大站，是最經濟的進城方式。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">✈️ 大興機場</div>
+          <div class="note-body">搭大興機場快線（地鐵大興機場線）到草橋站約 <strong>20 分鐘</strong>，草橋可轉乘 10 號線繼續前往市中心。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🗺️</span>
+        <span class="section-title">景點指南</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🏯 故宮 / 天安門廣場</div>
+          <div class="note-body">北京必去景點，世界最大的宮殿建築群。<strong>需提前在故宮官網網路預約門票</strong>，每週一閉館，建議留至少半天至一天參觀。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🧱 長城</div>
+          <div class="note-body"><strong>八達嶺</strong>距市區最近但人潮眾多；<strong>慕田峪</strong>較幽靜、修繕完整，景色更原始壯闊。均需提前網路購票，體力消耗大請穿舒適鞋子。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏛️ 天壇公園</div>
+          <div class="note-body">明清皇帝祭天的神聖場所，祈年殿建築精美，清晨可觀察在此晨練的北京老人，充滿在地生活氣息。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌿 頤和園</div>
+          <div class="note-body">清朝皇家園林，以昆明湖和萬壽山為中心，亭台樓閣與湖光山色交融，是北京最大的皇家園林。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🎨 798 藝術區</div>
+          <div class="note-body">廢棄工廠改建的當代藝術聚落，各大畫廊、藝術機構、設計品牌入駐，是感受北京當代文化的最佳地點。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏮 鼓樓 / 南鑼鼓巷</div>
+          <div class="note-body">北京胡同文化精華所在，古老的衚衕小巷兩旁是文創小店、特色餐廳與咖啡館，充滿老北京生活情趣。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🍜</span>
+        <span class="section-title">必吃美食</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🦆 北京烤鴨</div>
+          <div class="note-body">北京最著名的美食，皮酥脆、肉鮮嫩，搭配薄餅、蔥段、黃瓜與甜麵醬食用。<strong>全聚德</strong>（百年老店）和<strong>大董</strong>（精緻版）都是名店。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍜 炸醬麵</div>
+          <div class="note-body">老北京傳統麵食，以豬肉丁炒製的炸醬拌麵，配上各式生菜絲，看似簡單卻滋味深厚，是北京的靈魂小吃。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍲 涮羊肉火鍋</div>
+          <div class="note-body">北京傳統銅鍋涮羊肉，<strong>東來順</strong>是百年老字號，選用內蒙古羊肉，搭配芝麻醬與韭菜花醬，冬春季節最暖胃。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🥛 豆汁</div>
+          <div class="note-body">北京特有的傳統早點，以綠豆發酵製成，味道酸臭獨特，是典型的「北京味道」，配焦圈（炸麵圈）一起吃是標準組合。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍭 糖葫蘆</div>
+          <div class="note-body">以山楂串糖衣製成的傳統街頭小吃，酸甜開胃，冬春季節在街頭巷尾隨處可見，是北京最具代表性的童年零食。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏮 王府井小吃街</div>
+          <div class="note-body">匯集全國各地特色小吃，蠍子、海星等奇特食材也在其中，是體驗北京街頭小吃文化的觀光勝地，夜間特別熱鬧。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🛍️</span>
+        <span class="section-title">購物</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🏬 王府井百貨商圈</div>
+          <div class="note-body">北京最繁華的商業街，百貨公司、老字號、品牌店林立，是購買國產品牌與伴手禮的好地方。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">👟 三里屯潮流品牌</div>
+          <div class="note-body">北京最時尚的潮流商業區，各大國際品牌與潮流選品店聚集，太古里 Village 是必逛的開放式購物中心。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🎨 南鑼鼓巷文創小物</div>
+          <div class="note-body">各種北京主題文創商品、手工藝品、特色紀念品，價格親民，適合買有在地特色的伴手禮。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">👜 秀水街</div>
+          <div class="note-body">皮件、仿品、各種紀念品的集中地，善於殺價可找到便宜貨，購買時請認清品質。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🖼️ 798 藝術區</div>
+          <div class="note-body">當代藝術品、設計師商品、藝術衍生品琳瑯滿目，適合喜歡藝術與設計的旅客，消費偏高但品質有保障。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">💡</span>
+        <span class="section-title">在地小提示</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">📅 故宮週一閉館</div>
+          <div class="note-body">故宮每週一固定閉館（法定節假日除外），行程安排務必避開週一，且需提前在故宮博物院官網預約購票。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">👟 長城體力準備</div>
+          <div class="note-body">長城坡度陡、台階多，體力消耗遠超預期，請穿舒適防滑的運動鞋，備好飲水與零食，量力而為決定攀爬段數。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚕 計程車誠信</div>
+          <div class="note-body">北京正規計程車有起步價且誠信，司機一般不議價，比其他城市更可靠。建議搭乘正規計程車或用滴滴叫車。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">💧 天氣乾燥補水</div>
+          <div class="note-body">北京 3 月非常乾燥，戶外觀光時多喝水、帶護唇膏與保濕乳液，避免因乾燥引發不適。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">😷 霧霾與沙塵</div>
+          <div class="note-body">3 月是北京沙塵暴季節，遇到霧霾或沙塵天氣時建議戴 N95 口罩，出發前可查詢北京 AQI（空氣品質指數）。</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      台灣旅遊出發清單 · 資訊僅供參考，出發前請確認最新規定
+    </footer>
+  </div>
+</body>
+</html>

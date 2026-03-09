@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>釜山 Busan 旅遊指南</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8; color: #1a202c; min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute; top: 18px; left: 16px;
+      color: rgba(255,255,255,0.85); font-size: 0.9rem;
+      text-decoration: none; display: flex; align-items: center; gap: 4px;
+    }
+    header {
+      color: white; padding: 24px 20px 20px;
+      text-align: center; position: relative;
+      background: linear-gradient(135deg, #1e3a5f 0%, #2b6cb0 100%);
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .container { padding: 16px 20px 80px; max-width: 600px; margin: 0 auto; }
+    .alert { border-left: 4px solid; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6; }
+    .alert.yellow { background: #fffbeb; border-left-color: #f59e0b; }
+    .alert.green { background: #f0fff4; border-left-color: #48bb78; }
+    .alert.blue { background: #ebf8ff; border-left-color: #4299e1; }
+    .alert.red { background: #fff5f5; border-left-color: #fc8181; }
+    .alert strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+    .section { margin-bottom: 20px; }
+    .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .section-icon { font-size: 1.2rem; }
+    .section-title { font-size: 1rem; font-weight: 700; color: #2d3748; }
+    .note-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); overflow: hidden; }
+    .note-item { padding: 14px 16px; border-bottom: 1px solid #f7fafc; font-size: 0.88rem; line-height: 1.6; }
+    .note-item:last-child { border-bottom: none; }
+    .note-title { font-weight: 700; margin-bottom: 4px; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; }
+    .note-body { color: #4a5568; line-height: 1.7; }
+    .note-body strong { color: #2d3748; }
+    .quick-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .fact-card { background: white; border-radius: 12px; padding: 14px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .fact-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .fact-label { font-size: 0.72rem; color: #a0aec0; margin-bottom: 2px; }
+    .fact-value { font-size: 0.9rem; font-weight: 700; color: #2d3748; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="korea-checklist.html" class="back-btn">← 返回</a>
+    <div class="flag">🇰🇷</div>
+    <h1>釜山 Busan</h1>
+    <p>韓國第二大城市・海景・海鮮聖地</p>
+  </header>
+
+  <div class="container">
+    <div class="quick-facts">
+      <div class="fact-card">
+        <div class="fact-icon">🌡️</div>
+        <div class="fact-label">氣溫</div>
+        <div class="fact-value">3月 5–12°C</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🗣️</div>
+        <div class="fact-label">語言</div>
+        <div class="fact-value">韓語／釜山腔</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">💴</div>
+        <div class="fact-label">貨幣</div>
+        <div class="fact-value">韓元 KRW</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🌊</div>
+        <div class="fact-label">特色</div>
+        <div class="fact-value">海灘／海鮮</div>
+      </div>
+    </div>
+
+    <div class="alert green">
+      <strong>🚄 首爾 + 釜山雙城旅遊</strong>
+      釜山是韓國第二大城市，比首爾稍暖，海景壯觀。從首爾搭 KTX 高速鐵路約 2.5 小時，非常適合首爾＋釜山雙城旅遊。
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🚇</span>
+        <span class="section-title">交通攻略</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🚇 釜山地鐵</div>
+          <div class="note-body">共 4 條線，覆蓋海雲台、南浦洞、西面等主要景點，T-money 卡可直接使用，轉乘方便。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">💳 T-money 卡通用</div>
+          <div class="note-body">與首爾相同，T-money 卡可搭釜山地鐵、公車，在釜山當地超商亦可購買與儲值。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚕 Kakao T 叫車</div>
+          <div class="note-body">釜山計程車資比首爾略便宜，Kakao T App 同樣適用，景點間移動也很方便。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">✈️ 金海國際機場</div>
+          <div class="note-body">距釜山市區約 <strong>40 分鐘</strong>，可搭地鐵 3 號線至沙上站轉乘輕軌，或搭機場巴士直達海雲台、南浦洞等地。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚄 KTX 高速鐵路</div>
+          <div class="note-body">從首爾站（서울역）搭 KTX 到釜山站（부산역）約 <strong>2.5 小時</strong>，班次頻繁，建議提前在 Korail 官網訂票。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🗺️</span>
+        <span class="section-title">區域指南</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🏖️ 海雲台 Haeundae</div>
+          <div class="note-body">韓國最有名的海水浴場，沙灘綿長、海景壯闊。也是釜山國際電影節（BIFF）的場地周邊，飯店與餐廳林立。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌉 廣安里 Gwangalli</div>
+          <div class="note-body">廣安大橋夜景超美，沿岸咖啡廳林立，是釜山最浪漫的夜景觀賞地點，傍晚人氣極旺。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🎬 南浦洞 / BIFF 廣場</div>
+          <div class="note-body">釜山國際電影節主要場地，廣場上印有明星手印，周邊街邊美食豐富，是釜山傳統市中心。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🎨 甘川洞文化村</div>
+          <div class="note-body">被譽為「韓國馬丘比丘」，五顏六色的房屋沿山而建，壁畫巷弄充滿藝術氣息，是釜山最著名的拍照聖地。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🐟 札嘎其市場 Jagalchi</div>
+          <div class="note-body">韓國最大的海鮮市場，現買現吃，各種新鮮魚貝螃蟹應有盡有，樓上有代客料理服務。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🦀 機張 Gijang</div>
+          <div class="note-body">以螃蟹市場聞名，機張市場的大閘蟹與帝王蟹讓饕客趨之若鶩，春秋兩季是最佳季節。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🍜</span>
+        <span class="section-title">必吃美食</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🍖 豬肉湯飯 돼지국밥</div>
+          <div class="note-body">釜山的靈魂美食，豬骨熬製的白色濃湯搭配白飯，加入豬肉片與韭菜，早餐吃最對味，釜山在地人的日常。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🐟 생선회 海鮮生魚片</div>
+          <div class="note-body">到札嘎其市場挑選新鮮漁獲，二樓請店家代為料理，比台灣日本料理店新鮮且價格實惠。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍢 魚板 어묵</div>
+          <div class="note-body">釜山名產，與首爾風味不同，釜山魚板口感更紮實，在南浦洞市場街頭串燒吃最道地。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍜 밀면 小麥冷麵</div>
+          <div class="note-body">釜山特有的冷麵，以小麥粉製成，比平壤冷麵口感更 Q 彈，搭配清爽湯頭或辣醬，是夏日消暑聖品。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🦀 機張蟹 간장게장</div>
+          <div class="note-body">醬油醃生蟹，被稱為「飯飯的小偷」，蟹膏鹹香下飯，機張市場現買的最新鮮，是釜山必嚐美味。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍮 海雲台市場橡子凍 묵</div>
+          <div class="note-body">以橡子粉製成的涼拌豆腐狀食品，口感滑嫩，搭配醬油芝麻醬，是釜山傳統市場的健康點心。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🏖️</span>
+        <span class="section-title">戶外活動</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🚶 海雲台海水浴場散步</div>
+          <div class="note-body">3 月雖未到游泳季節，但沿著海雲台海岸線散步，海風宜人，早晨或傍晚皆宜，周邊餐廳咖啡廳豐富。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌉 廣安里夜景</div>
+          <div class="note-body">廣安大橋夜間燈光秀壯觀，沿廣安里海岸散步欣賞夜景，周邊咖啡廳坐在室內賞景最舒適。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🛕 海東龍宮寺</div>
+          <div class="note-body">建在海邊礁石上的佛寺，壯觀獨特，是韓國少見的海邊寺廟。春節與農曆新年人潮眾多，建議早去。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌲 太宗台自然公園</div>
+          <div class="note-body">釜山最南端的懸崖公園，可俯瞰南海與日本對馬島，設有觀光小火車，步道健行景色優美。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚡 松島海上纜車</div>
+          <div class="note-body">韓國第一條海上纜車，可選擇透明地板車廂，從空中俯瞰釜山海岸線，景色令人屏息。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">💡</span>
+        <span class="section-title">在地小提示</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🗣️ 釜山腔</div>
+          <div class="note-body">釜山腔（경상도 사투리）與首爾腔差異相當大，語調不同、部分詞彙也不同，但年輕人溝通上沒有問題。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🦀 機張螃蟹季節</div>
+          <div class="note-body">春季（3–5 月）與秋季（9–11 月）是機張螃蟹最肥美的季節，此時前往機張市場最值得。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌉 廣安大橋燈光秀</div>
+          <div class="note-body">廣安大橋夜間燈光秀每天約 <strong>21:00</strong> 開始，持續約 30 分鐘，週末有時會有特別燈光設計。</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      台灣旅遊出發清單 · 資訊僅供參考，出發前請確認最新規定
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>上海 Shanghai 旅遊指南</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8; color: #1a202c; min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute; top: 18px; left: 16px;
+      color: rgba(255,255,255,0.85); font-size: 0.9rem;
+      text-decoration: none; display: flex; align-items: center; gap: 4px;
+    }
+    header {
+      color: white; padding: 24px 20px 20px;
+      text-align: center; position: relative;
+      background: linear-gradient(135deg, #1a202c 0%, #e53e3e 100%);
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .container { padding: 16px 20px 80px; max-width: 600px; margin: 0 auto; }
+    .alert { border-left: 4px solid; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6; }
+    .alert.yellow { background: #fffbeb; border-left-color: #f59e0b; }
+    .alert.green { background: #f0fff4; border-left-color: #48bb78; }
+    .alert.blue { background: #ebf8ff; border-left-color: #4299e1; }
+    .alert.red { background: #fff5f5; border-left-color: #fc8181; }
+    .alert strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+    .section { margin-bottom: 20px; }
+    .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .section-icon { font-size: 1.2rem; }
+    .section-title { font-size: 1rem; font-weight: 700; color: #2d3748; }
+    .note-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); overflow: hidden; }
+    .note-item { padding: 14px 16px; border-bottom: 1px solid #f7fafc; font-size: 0.88rem; line-height: 1.6; }
+    .note-item:last-child { border-bottom: none; }
+    .note-title { font-weight: 700; margin-bottom: 4px; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; }
+    .note-body { color: #4a5568; line-height: 1.7; }
+    .note-body strong { color: #2d3748; }
+    .quick-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .fact-card { background: white; border-radius: 12px; padding: 14px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .fact-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .fact-label { font-size: 0.72rem; color: #a0aec0; margin-bottom: 2px; }
+    .fact-value { font-size: 0.9rem; font-weight: 700; color: #2d3748; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="china-checklist.html" class="back-btn">← 返回</a>
+    <div class="flag">🇨🇳</div>
+    <h1>上海 Shanghai</h1>
+    <p>東方巴黎・外灘夜景・美食購物之都</p>
+  </header>
+
+  <div class="container">
+    <div class="quick-facts">
+      <div class="fact-card">
+        <div class="fact-icon">🌡️</div>
+        <div class="fact-label">氣溫</div>
+        <div class="fact-value">3月 8–15°C</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🗣️</div>
+        <div class="fact-label">語言</div>
+        <div class="fact-value">普通話／上海話</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">💴</div>
+        <div class="fact-label">貨幣</div>
+        <div class="fact-value">人民幣 CNY</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🕐</div>
+        <div class="fact-label">時區</div>
+        <div class="fact-value">UTC+8</div>
+      </div>
+    </div>
+
+    <div class="alert yellow">
+      <strong>☂️ 3月天氣提示</strong>
+      3月上海天氣多雨，帶折疊傘。記得出發前在台灣裝好 VPN！
+    </div>
+
+    <div class="alert red">
+      <strong>🪪 入境證件提醒</strong>
+      台灣人入境中國大陸需攜帶台胞證，護照可作為輔助文件。請確認台胞證效期充足，過期需提前換發。
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🚇</span>
+        <span class="section-title">交通攻略</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🗺️ 上海地鐵</div>
+          <div class="note-body">超過 20 條線路，幾乎覆蓋全市所有景點，班次密集、標示清楚。Alipay（支付寶）或 WeChat Pay 掃碼即可進站，也可購買一次性票。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">📱 Alipay / WeChat Pay</div>
+          <div class="note-body">上海幾乎全面無現金，建議出發前開通支付寶或微信支付的外國人版本，綁定台灣信用卡，可用於地鐵、餐廳、購物等。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚕 滴滴出行</div>
+          <div class="note-body">中國最大叫車平台，可在 App Store 下載，支援外國手機號與信用卡，比路邊攔計程車更方便且價格透明。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚄 浦東機場磁浮列車</div>
+          <div class="note-body">從浦東機場搭磁浮列車僅需 <strong>8 分鐘</strong>到龍陽路站，時速最高 430 公里，是全球最快的商業磁浮列車，體驗超值！</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">✈️ 虹橋機場</div>
+          <div class="note-body">虹橋機場距市區較近，可直接搭地鐵 2 號線或 10 號線進城，約 30–40 分鐘可達市中心，也設有高鐵站。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🗺️</span>
+        <span class="section-title">區域指南</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🏛️ 外灘 The Bund</div>
+          <div class="note-body">百年歷史建築群林立，對岸是浦東陸家嘴金融區摩天大樓，黃浦江夜景是上海最具代表性的景色，建議黃昏後前往。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🛍️ 南京路步行街</div>
+          <div class="note-body">中國最繁華的商業街之一，百貨公司、老字號品牌林立，步行街全長超過 1 公里，適合購物與感受上海商業文化。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍷 新天地</div>
+          <div class="note-body">以石庫門老建築改建的時尚餐廳與酒吧區，中西合璧風格獨特，是上海最受外國遊客喜愛的休閒娛樂區。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌳 法租界</div>
+          <div class="note-body">梧桐樹成蔭的老上海風情街區，咖啡館、精品店、設計師小店林立，武康路、安福路是最受歡迎的散步路線。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏙️ 浦東 Pudong</div>
+          <div class="note-body">東方明珠、上海中心、金茂大廈等超高層建築聚集的陸家嘴金融區，登高俯瞰上海全景是必做行程。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🎨 田子坊</div>
+          <div class="note-body">由舊式里弄改建的文創市集，各種藝術小店、咖啡廳、文創商品琳瑯滿目，是感受上海文青氣息的好去處。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🍜</span>
+        <span class="section-title">必吃美食</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🥟 小籠包</div>
+          <div class="note-body">上海最具代表性的美食，湯汁飽滿、皮薄餡鮮。<strong>南翔饅頭店</strong>（城隍廟老店）和<strong>鼎泰豐</strong>（連鎖精品）都是熱門選擇。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🥘 生煎包</div>
+          <div class="note-body">底部煎至金黃焦脆、頂撒芝麻香蔥，是上海早點必吃。<strong>大壺春</strong>和<strong>小楊生煎</strong>是最知名的老字號，常需排隊。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍖 紅燒肉</div>
+          <div class="note-body">本幫菜（上海菜）的代表作，豬五花以醬油、糖、紹興酒長時間燉煮，色澤紅亮、肥而不膩，是道地上海家常味。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🦀 蟹粉豆腐</div>
+          <div class="note-body">以大閘蟹的蟹黃、蟹膏入菜，鮮味十足，秋蟹季（9–11 月）最佳，但上海全年都吃得到蟹粉系列菜餚。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍲 本幫菜</div>
+          <div class="note-body">上海菜以「濃油赤醬」為特色，口味偏甜偏鹹，紅燒、燉煮料理豐富，與台灣家常菜口味有相近之處。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏮 城隍廟小吃</div>
+          <div class="note-body">城隍廟豫園周邊匯集各式上海傳統小吃，南翔小籠包、糯米糰、梨膏糖等應有盡有，是必逛的美食廣場。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🛍️</span>
+        <span class="section-title">購物</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🏬 南京路百貨</div>
+          <div class="note-body">第一百貨、新世界等老牌百貨公司林立，品牌齊全，是感受上海商業文化的傳統購物聖地。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">💎 新天地精品</div>
+          <div class="note-body">國際精品品牌、設計師品牌、選品店聚集，適合喜歡精緻購物體驗的旅客，周邊餐廳也是高檔消費。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🎨 田子坊文創</div>
+          <div class="note-body">各式手工藝品、文創商品、上海主題紀念品，逛完順便喝杯咖啡，是買伴手禮的好去處。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">👗 七浦路服裝批發</div>
+          <div class="note-body">上海最大的服裝批發市場，價格實惠、款式多樣，散客可購買，善於殺價可撿到不少便宜貨。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">✈️ 機場免稅店</div>
+          <div class="note-body">浦東機場免稅店規模龐大，品牌齊全，建議回程預留充裕時間購物，價格通常比市區優惠。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">💡</span>
+        <span class="section-title">在地小提示</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🗣️ 語言溝通</div>
+          <div class="note-body">上海人日常說上海話，但普通話完全沒問題。年輕一代英文能力也不錯，加上翻譯 App，溝通幾乎不成問題。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🎒 地鐵安檢</div>
+          <div class="note-body">上海地鐵進站需過行李 X 光掃描，大包包需放入輸送帶，高峰時段可能需要排隊，行程安排預留多一點時間。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">📅 景點預約</div>
+          <div class="note-body">部分景點需提前網路預約，如外灘觀光隧道、上海中心大廈觀景台，建議出發前在官方 App 或官網完成預約。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚢 夜遊黃浦江</div>
+          <div class="note-body">搭乘黃浦江遊覽船欣賞外灘與陸家嘴夜景非常值得，約 1 小時航程，有多個碼頭可上船，晚上 7–9 點景色最美。</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      台灣旅遊出發清單 · 資訊僅供參考，出發前請確認最新規定
+    </footer>
+  </div>
+</body>
+</html>

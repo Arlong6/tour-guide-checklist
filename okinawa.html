@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>沖繩 Okinawa — 旅遊指南</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8; color: #1a202c; min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute; top: 18px; left: 16px;
+      color: rgba(255,255,255,0.85); font-size: 0.9rem;
+      text-decoration: none; display: flex; align-items: center; gap: 4px;
+    }
+    header {
+      color: white; padding: 24px 20px 20px;
+      text-align: center; position: relative;
+      background: linear-gradient(135deg, #065f46 0%, #059669 100%);
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .container { padding: 16px 20px 80px; max-width: 600px; margin: 0 auto; }
+    .alert { border-left: 4px solid; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6; }
+    .alert.yellow { background: #fffbeb; border-left-color: #f59e0b; }
+    .alert.green { background: #f0fff4; border-left-color: #48bb78; }
+    .alert.blue { background: #ebf8ff; border-left-color: #4299e1; }
+    .alert strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+    .section { margin-bottom: 20px; }
+    .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .section-icon { font-size: 1.2rem; }
+    .section-title { font-size: 1rem; font-weight: 700; color: #2d3748; }
+    .note-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); overflow: hidden; }
+    .note-item { padding: 14px 16px; border-bottom: 1px solid #f7fafc; font-size: 0.88rem; line-height: 1.6; }
+    .note-item:last-child { border-bottom: none; }
+    .note-title { font-weight: 700; margin-bottom: 4px; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; }
+    .note-body { color: #4a5568; line-height: 1.7; }
+    .note-body strong { color: #2d3748; }
+    .quick-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .fact-card { background: white; border-radius: 12px; padding: 14px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .fact-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .fact-label { font-size: 0.72rem; color: #a0aec0; margin-bottom: 2px; }
+    .fact-value { font-size: 0.9rem; font-weight: 700; color: #2d3748; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="japan-checklist.html" class="back-btn">← 返回</a>
+    <div class="flag">🇯🇵</div>
+    <h1>沖繩 Okinawa</h1>
+    <p>南國島嶼・珊瑚礁與琉球文化</p>
+  </header>
+
+  <div class="container">
+    <div class="quick-facts">
+      <div class="fact-card">
+        <div class="fact-icon">🌡️</div>
+        <div class="fact-label">氣溫</div>
+        <div class="fact-value">3月 18–22°C</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🗣️</div>
+        <div class="fact-label">語言</div>
+        <div class="fact-value">日語／沖繩方言</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">💴</div>
+        <div class="fact-label">貨幣</div>
+        <div class="fact-value">日圓 JPY</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🐠</div>
+        <div class="fact-label">特色</div>
+        <div class="fact-value">海灘／珊瑚礁</div>
+      </div>
+    </div>
+
+    <div class="alert green">
+      <strong>🌺 3月沖繩氣候</strong>
+      3月沖繩氣候宜人，比台灣稍涼，是日本最早有櫻花（寒緋桜）的地方（1月底至2月）！海水仍偏涼，浮潛建議穿防寒衣（Wet Suit）。
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🚇</span>
+        <span class="section-title">交通攻略</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">✈️ 那霸空港</div>
+          <div class="note-body">沖繩主要國際機場，台灣有直飛班機，飛行時間約 1.5 小時。入境後可直接搭乘 Yui Rail 前往市區。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚝 Yui Rail（單軌電車）</div>
+          <div class="note-body">那霸市區唯一的大眾軌道運輸，連接那霸空港至首里城一帶，覆蓋國際通及主要市區景點。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚗 市區外強烈建議租車</div>
+          <div class="note-body">沖繩本島北部、宮古島、石垣島景點分散，<strong>租車幾乎是必要選擇</strong>，需備有效國際駕照。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🪙 ORCA 智慧卡</div>
+          <div class="note-body">沖繩版的 IC 交通卡，可搭乘 Yui Rail 及部分路線巴士，省去每次買票的麻煩。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🗺️</span>
+        <span class="section-title">區域指南</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🏯 那霸</div>
+          <div class="note-body">首里城是琉球王國的歷史核心（正在修復中），國際通商店街是購物與美食集中地，牧志公設市場有豐富海鮮。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🐳 美浦 / 讀谷</div>
+          <div class="note-body">沖繩美麗海水族館（世界第二大）位於此區，殘波岬有壯觀的白色燈塔和岩石海岸，景色絕美。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌿 北部</div>
+          <div class="note-body">水族館周邊有森林冒險（BIOS の丘）、古宇利島（愛心岩石知名打卡點）、備瀨福木林道等自然景點。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏝️ 宮古島</div>
+          <div class="note-body">以驚人的海水透明度著稱，是日本頂級浮潛與潛水聖地，與多個小島以橋相連，租車環島很方便。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🐠 石垣島</div>
+          <div class="note-body">日本最南端的有人島群，海洋生態豐富，近海可見蝠魟、海龜，也是前往竹富島的跳板。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🏖️</span>
+        <span class="section-title">戶外活動</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🤿 浮潛 & 潛水</div>
+          <div class="note-body">沖繩珊瑚礁生態豐富，宮古島、石垣島、慶良間群島是頂級潛點。3月水溫約 20°C，建議穿 5mm Wet Suit。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🪂 帆傘 & 水上活動</div>
+          <div class="note-body">拖曳傘（帆傘）可從高空俯瞰沖繩美麗的蔚藍海色，獨木舟、香蕉船等水上活動各大海灘均有提供。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚢 玻璃船</div>
+          <div class="note-body">不會游泳或不想下水也能透過玻璃底船欣賞珊瑚礁與熱帶魚，適合全家大小參與的輕鬆活動。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🐋 沖繩美麗海水族館</div>
+          <div class="note-body">世界第二大水族館，巨大的黑潮之海水槽可同時看到鯨鯊與鬼蝠魟，建議<strong>早上開館即入場</strong>避開人潮。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🍜</span>
+        <span class="section-title">必吃美食</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🍜 沖繩麵</div>
+          <div class="note-body">以豬排骨或三層肉為湯底，麵條介於烏龍麵與拉麵之間，溫和鮮甜，是沖繩最具代表性的主食。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🥬 苦瓜炒蛋（ゴーヤチャンプル）</div>
+          <div class="note-body">沖繩家常料理，苦瓜、豆腐、蛋與午餐肉（SPAM）一起炒，苦中帶甘，是沖繩長壽飲食文化的象徵。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍶 泡盛酒</div>
+          <div class="note-body">沖繩特有的蒸餾酒，以泰國米釀造，酒精度約 30% 起，各酒廠風味不同，可在國際通購買各式品牌。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌮 塔可飯（Taco Rice）</div>
+          <div class="note-body">沖繩發明的獨特料理，將墨西哥塔可的餡料放在白飯上，源自美軍基地文化，現已成為沖繩名物。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌿 海葡萄</div>
+          <div class="note-body">沖繩特有的海藻，晶瑩剔透如珍珠串，口感在嘴中輕輕爆裂，搭配醬油享用，是獨特的沖繩美食體驗。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🟣 紅芋塔</div>
+          <div class="note-body">以沖繩特產紫心地瓜製作的塔皮甜點，是沖繩最受歡迎的伴手禮，機場及國際通各大商店均有販售。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">💡</span>
+        <span class="section-title">在地小提示</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🚗 國際駕照</div>
+          <div class="note-body">租車需備有效國際駕照（台灣駕照 + 日本語譯本），可在台灣監理站辦理，費用低廉，強烈建議出發前辦好。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">☀️ 防曬不可少</div>
+          <div class="note-body">沖繩陽光強烈，即使 3 月紫外線依然很強，請備防曬乳（SPF 50+）、太陽眼鏡與防曬帽，避免曬傷。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🪸 珊瑚礁保護</div>
+          <div class="note-body">珊瑚礁保護區嚴禁踩踏或破壞珊瑚，防曬乳也建議使用珊瑚礁友善（Reef Safe）產品，保護海洋生態。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🐳 水族館建議早去</div>
+          <div class="note-body">沖繩美麗海水族館建議<strong>早上開館（8:30）即入場</strong>，可避開旅遊巴士帶來的大批人潮，從容欣賞展覽。</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>台灣旅遊出發清單 · 資訊僅供參考，出發前請確認最新規定</footer>
+  </div>
+</body>
+</html>

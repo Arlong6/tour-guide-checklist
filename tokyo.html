@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>東京 Tokyo — 旅遊指南</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8; color: #1a202c; min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute; top: 18px; left: 16px;
+      color: rgba(255,255,255,0.85); font-size: 0.9rem;
+      text-decoration: none; display: flex; align-items: center; gap: 4px;
+    }
+    header {
+      color: white; padding: 24px 20px 20px;
+      text-align: center; position: relative;
+      background: linear-gradient(135deg, #1a202c 0%, #4a5568 100%);
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .container { padding: 16px 20px 80px; max-width: 600px; margin: 0 auto; }
+    .alert { border-left: 4px solid; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6; }
+    .alert.yellow { background: #fffbeb; border-left-color: #f59e0b; }
+    .alert.green { background: #f0fff4; border-left-color: #48bb78; }
+    .alert.blue { background: #ebf8ff; border-left-color: #4299e1; }
+    .alert strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+    .section { margin-bottom: 20px; }
+    .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .section-icon { font-size: 1.2rem; }
+    .section-title { font-size: 1rem; font-weight: 700; color: #2d3748; }
+    .note-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); overflow: hidden; }
+    .note-item { padding: 14px 16px; border-bottom: 1px solid #f7fafc; font-size: 0.88rem; line-height: 1.6; }
+    .note-item:last-child { border-bottom: none; }
+    .note-title { font-weight: 700; margin-bottom: 4px; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; }
+    .note-body { color: #4a5568; line-height: 1.7; }
+    .note-body strong { color: #2d3748; }
+    .quick-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .fact-card { background: white; border-radius: 12px; padding: 14px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .fact-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .fact-label { font-size: 0.72rem; color: #a0aec0; margin-bottom: 2px; }
+    .fact-value { font-size: 0.9rem; font-weight: 700; color: #2d3748; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="japan-checklist.html" class="back-btn">← 返回</a>
+    <div class="flag">🇯🇵</div>
+    <h1>東京 Tokyo</h1>
+    <p>日本首都・世界最大都市圈</p>
+  </header>
+
+  <div class="container">
+    <div class="quick-facts">
+      <div class="fact-card">
+        <div class="fact-icon">🌡️</div>
+        <div class="fact-label">氣溫</div>
+        <div class="fact-value">3月 6–14°C</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🗣️</div>
+        <div class="fact-label">語言</div>
+        <div class="fact-value">日語</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">💴</div>
+        <div class="fact-label">貨幣</div>
+        <div class="fact-value">日圓 JPY</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🕐</div>
+        <div class="fact-label">時區</div>
+        <div class="fact-value">UTC+9</div>
+      </div>
+    </div>
+
+    <div class="alert yellow">
+      <strong>🌸 賞櫻提醒</strong>
+      3月下旬是賞櫻季，上野公園、新宿御苑、目黑川人潮洶湧，建議早起前往，避開午後人群高峰。
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🚇</span>
+        <span class="section-title">交通攻略</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🪙 Suica / Pasmo 卡</div>
+          <div class="note-body">可在成田機場或羽田機場購買，充值後可搭乘東京幾乎所有大眾交通工具，也可在便利商店消費。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚉 JR 山手線</div>
+          <div class="note-body">繞圈行駛，覆蓋東京主要景點（澀谷、新宿、原宿、上野、秋葉原、品川），是最常用的路線。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🎟️ 東京 Metro 一日券</div>
+          <div class="note-body">24／48／72 小時券超值，可無限次搭乘東京 Metro 9 條路線，適合密集觀光日使用。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🚕 計程車</div>
+          <div class="note-body">東京計程車價格昂貴，起跳約 ¥500 起，建議少搭，以地鐵為主要交通工具。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🗺️</span>
+        <span class="section-title">區域指南</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">⛩️ 淺草</div>
+          <div class="note-body">老東京風情的代表，淺草寺是東京最古老的寺廟，仲見世通商店街可購買傳統工藝品與小吃。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🌆 新宿</div>
+          <div class="note-body">包含歌舞伎町夜生活區、新宿御苑（賞花名所）、各大百貨商場，是東京最熱鬧的商業區之一。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🐕 澀谷</div>
+          <div class="note-body">忠犬八公銅像是打卡必去，109 百貨流行服飾，澀谷串流十字路口是全球最繁忙的行人天堂。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🛍️ 原宿</div>
+          <div class="note-body">竹下通是年輕流行文化聖地，表參道則是高級精品與網美咖啡廳的集散地。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🎮 秋葉原</div>
+          <div class="note-body">電器、動漫、遊戲、女僕咖啡廳的天堂，二手電器與周邊商品種類繁多。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">💎 銀座</div>
+          <div class="note-body">東京最高級的購物街，世界頂級精品雲集，附近的築地場外市場可吃到新鮮海鮮。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🤖 台場</div>
+          <div class="note-body">teamLab 數位藝術館、等比例獨角獸鋼彈、購物中心 DiverCity，是親子與科技迷必訪。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🍜</span>
+        <span class="section-title">必吃美食</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🍣 壽司</div>
+          <div class="note-body">豐洲市場周邊有高品質壽司店，回轉壽司如くら寿司、スシロー也相當美味且經濟實惠。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍥 拉麵</div>
+          <div class="note-body"><strong>一蘭</strong>（博多豚骨）、<strong>富士丸</strong>（二郎系）等，東京拉麵流派多元，各有擁護者。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍤 天婦羅 & 鰻魚飯</div>
+          <div class="note-body">傳統江戶料理，可在淺草或銀座周邊找到老字號天婦羅餐廳，鰻魚飯香氣四溢令人回味。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🍌 東京 Banana</div>
+          <div class="note-body">東京最具代表性的伴手禮，香蕉奶油夾心蛋糕，在成田機場、羽田機場、東京車站均有販售。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏪 便利商店美食</div>
+          <div class="note-body">7-Eleven、全家、Lawson 的御飯糰、三明治、關東煮、咖啡品質極高，是日本旅遊不可缺的體驗。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🛍️</span>
+        <span class="section-title">購物</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">💻 秋葉原電器</div>
+          <div class="note-body">Yodobashi Camera、BIC Camera 等大型電器賣場，外國旅客可辦理免稅（需護照）。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">👗 原宿竹下通</div>
+          <div class="note-body">日本流行文化最前線，街頭服飾、個性小物、可愛雜貨，適合年輕族群購物。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">💎 銀座精品</div>
+          <div class="note-body">LV、Chanel、Hermès 等世界名牌旗艦店集中，GINZA SIX 是新興高端複合商場。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🐟 築地場外市場</div>
+          <div class="note-body">各式海鮮乾貨、醃漬物、昆布茶等伴手禮，是購買高品質食材伴手禮的好去處。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">💊 藥妝店</div>
+          <div class="note-body"><strong>松本清（Matsumoto Kiyoshi）</strong>、<strong>SUNDRUG</strong> 遍布全市，日本藥妝、保養品、零食CP值極高。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">💡</span>
+        <span class="section-title">在地小提示</span>
+      </div>
+      <div class="note-card">
+        <div class="note-item">
+          <div class="note-title">🚇 地鐵尖峰時段</div>
+          <div class="note-body">早晨 8–9 時、傍晚 18–19 時地鐵極度擁擠，建議錯開尖峰時段出行，或提前規劃行程。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🗑️ 街上沒有垃圾桶</div>
+          <div class="note-body">東京街道幾乎沒有公共垃圾桶，垃圾請自行帶回便利商店或飯店丟棄，保持環境整潔是基本禮儀。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">💰 不需給小費</div>
+          <div class="note-body">日本沒有給小費的文化，餐廳、旅館、計程車均不需給小費，服務費通常已內含。</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">🏧 提款方式</div>
+          <div class="note-body">7-Eleven 旗下 ATM（Seven Bank）接受海外金融卡提款，操作介面有中文選項，手續費相對親民。</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>台灣旅遊出發清單 · 資訊僅供參考，出發前請確認最新規定</footer>
+  </div>
+</body>
+</html>

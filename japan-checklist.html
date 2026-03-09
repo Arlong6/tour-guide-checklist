@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台灣人去日本 出發清單</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8;
+      color: #1a202c;
+      min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute;
+      top: 18px;
+      left: 16px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    header {
+      background: linear-gradient(135deg, #742a2a 0%, #c53030 100%);
+      color: white;
+      padding: 24px 20px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .progress-bar-wrap { background: #f0f4f8; padding: 16px 20px 0; }
+    .progress-label { display: flex; justify-content: space-between; font-size: 0.8rem; color: #718096; margin-bottom: 6px; }
+    .progress-bar { height: 8px; background: #e2e8f0; border-radius: 99px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #48bb78, #38a169); border-radius: 99px; transition: width 0.4s ease; width: 0%; }
+    .container { padding: 16px 20px 80px; max-width: 600px; margin: 0 auto; }
+    .alert { background: #fff3cd; border-left: 4px solid #f6ad55; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6; }
+    .alert.green { background: #f0fff4; border-left-color: #48bb78; }
+    .alert strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+    .section { margin-bottom: 20px; }
+    .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .section-icon { font-size: 1.2rem; }
+    .section-title { font-size: 1rem; font-weight: 700; color: #2d3748; }
+    .section-count { margin-left: auto; font-size: 0.78rem; color: #a0aec0; }
+    .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; border-bottom: 1px solid #f7fafc; cursor: pointer; transition: background 0.15s; -webkit-tap-highlight-color: transparent; }
+    .item:last-child { border-bottom: none; }
+    .item:active { background: #f7fafc; }
+    .item.checked { opacity: 0.55; }
+    .item.checked .item-name { text-decoration: line-through; color: #a0aec0; }
+    .checkbox { width: 22px; height: 22px; border-radius: 6px; border: 2px solid #cbd5e0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; transition: all 0.2s; }
+    .item.checked .checkbox { background: #48bb78; border-color: #48bb78; }
+    .checkbox-icon { display: none; color: white; font-size: 13px; font-weight: 700; }
+    .item.checked .checkbox-icon { display: block; }
+    .item-content { flex: 1; }
+    .item-name { font-size: 0.95rem; font-weight: 600; line-height: 1.4; }
+    .item-note { font-size: 0.8rem; color: #718096; margin-top: 3px; line-height: 1.5; }
+    .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 7px; border-radius: 99px; margin-left: 6px; vertical-align: middle; position: relative; top: -1px; }
+    .tag-red { background: #fff5f5; color: #e53e3e; }
+    .tag-orange { background: #fffaf0; color: #dd6b20; }
+    .tag-blue { background: #ebf8ff; color: #3182ce; }
+    .note-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); overflow: hidden; margin-bottom: 20px; }
+    .note-item { padding: 14px 16px; border-bottom: 1px solid #f7fafc; font-size: 0.88rem; line-height: 1.6; }
+    .note-item:last-child { border-bottom: none; }
+    .note-item .icon { font-size: 1.1rem; margin-right: 8px; }
+    .note-title { font-weight: 700; margin-bottom: 3px; display: flex; align-items: center; }
+    .note-body { color: #4a5568; padding-left: 26px; }
+    .reset-btn { display: block; margin: 0 auto 20px; padding: 10px 24px; background: white; color: #718096; border: 1px solid #e2e8f0; border-radius: 99px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+    .reset-btn:hover { background: #f7fafc; }
+    .done-banner { display: none; background: linear-gradient(135deg, #48bb78, #38a169); color: white; text-align: center; padding: 16px; border-radius: 12px; margin-bottom: 20px; font-size: 1rem; font-weight: 700; }
+    .done-banner.show { display: block; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-btn">‹ 回首頁</a>
+  <div class="flag">🇹🇼 ✈️ 🇯🇵</div>
+  <h1>台灣人去日本</h1>
+  <p>出發前確認清單・Taiwan → Japan</p>
+</header>
+
+<div class="progress-bar-wrap">
+  <div class="container" style="padding: 0; padding-top: 16px;">
+    <div class="progress-label">
+      <span>完成進度</span>
+      <span id="progress-text">0 / 0</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="done-banner" id="done-banner">🎉 全部完成！祝旅途平安順利！</div>
+
+  <div class="alert green" style="margin-top: 16px;">
+    <strong>✅ 台灣人去日本免簽！</strong>
+    觀光最長停留 90 天，護照效期需 6 個月以上。無需提前申請簽證，入境填寫入境卡即可。
+  </div>
+
+  <!-- 1. 必備文件 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📄</span>
+      <span class="section-title">必備文件</span>
+      <span class="section-count" id="count-docs"></span>
+    </div>
+    <div class="card" id="group-docs">
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">護照 <span class="tag tag-red">必備</span></div>
+          <div class="item-note">效期至少 6 個月以上。入境日本不需台胞證，護照即可。</div>
+        </div>
+      </div>
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">來回機票（電子票）</div>
+          <div class="item-note">截圖備好，入境時海關可能詢問回程航班資訊。</div>
+        </div>
+      </div>
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">住宿訂房確認單</div>
+          <div class="item-note">入境卡需填寫住宿地址，提前截圖備用。</div>
+        </div>
+      </div>
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">旅遊醫療保險</div>
+          <div class="item-note">日本醫療費用非常高，強烈建議購買旅平險（含醫療）。</div>
+        </div>
+      </div>
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">緊急聯絡資訊備份</div>
+          <div class="item-note">台灣駐日代表處急難救助：+81-3-3280-7917（東京）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 手機 & 網路 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📱</span>
+      <span class="section-title">手機 & 網路</span>
+      <span class="section-count" id="count-phone"></span>
+    </div>
+    <div class="card" id="group-phone">
+      <div class="item" data-group="phone" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">日本 SIM 卡 或 Pocket WiFi <span class="tag tag-red">必備</span></div>
+          <div class="item-note">推薦在台灣先買好日本旅遊 SIM（IIJmio、楽天、AIS）。機場也可取 Pocket WiFi，多人旅遊很划算。</div>
+        </div>
+      </div>
+      <div class="item" data-group="phone" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">下載 Google Maps 離線地圖</div>
+          <div class="item-note">日本 Google Maps 非常準確，出發前下載目的地離線地圖以防網路不穩。</div>
+        </div>
+      </div>
+      <div class="item" data-group="phone" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">下載 乘換案內 或 Google Maps 查路線</div>
+          <div class="item-note">「乘換案內」是日本最準的電車轉乘 App，免費且中文介面友善。</div>
+        </div>
+      </div>
+      <div class="item" data-group="phone" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">充電頭（日本 110V，台灣插頭可直用）</div>
+          <div class="item-note">日本電壓 100V，台灣電器通常可直接使用，不需轉換器，但插頭形狀相同（兩孔扁型）。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 金錢 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">💴</span>
+      <span class="section-title">金錢 & 支付</span>
+      <span class="section-count" id="count-money"></span>
+    </div>
+    <div class="alert">
+      <strong>💡 日本還是以現金為主！</strong>
+      雖然近年行動支付增加，但許多老店、神社、小餐廳、自動販賣機只收現金。建議備妥日幣現金。
+    </div>
+    <div class="card" id="group-money">
+      <div class="item" data-group="money" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">日幣現金 <span class="tag tag-red">重要</span></div>
+          <div class="item-note">建議在台灣換好（銀行匯率較佳）。7-Eleven ATM（Seven Bank）可用台灣提款卡領日幣。</div>
+        </div>
+      </div>
+      <div class="item" data-group="money" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">IC 交通卡（Suica / ICOCA）</div>
+          <div class="item-note">可搭地鐵、電車、巴士，也能在超商、部分餐廳消費。Apple Pay 可辦 Suica 最方便。或在機場/車站購買實體卡（押金 ¥500）。</div>
+        </div>
+      </div>
+      <div class="item" data-group="money" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">通知信用卡公司出國消費</div>
+          <div class="item-note">避免刷卡被誤判為異常交易而被鎖卡。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 健康 & 藥品 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">💊</span>
+      <span class="section-title">健康 & 藥品</span>
+      <span class="section-count" id="count-health"></span>
+    </div>
+    <div class="alert">
+      <strong>⚠️ 日本藥品管制注意</strong>
+      部分台灣常見藥品在日本屬違禁品，例如含 Pseudoephedrine（偽麻黃鹼）的感冒藥（如諾比舒冒）。建議攜帶醫師證明，勿攜帶超過 1 個月用量的處方藥。
+    </div>
+    <div class="card" id="group-health">
+      <div class="item" data-group="health" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">常備藥（腸胃藥、感冒藥、止痛藥）</div>
+          <div class="item-note">日本藥妝店也很方便，但語言不同難以挑選，建議帶自己習慣的藥。</div>
+        </div>
+      </div>
+      <div class="item" data-group="health" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">防曬乳 & 保濕乳液</div>
+          <div class="item-note">日本冬春氣候乾燥，夏天紫外線強。日本當地藥妝店也有很多選擇。</div>
+        </div>
+      </div>
+      <div class="item" data-group="health" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">行動電源（≤ 20,000 mAh，隨身攜帶）</div>
+          <div class="item-note">不可託運，需放隨身行李。日本也有許多 ChargeSPOT 共享充電站。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. 日本景點導覽 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🗾</span>
+      <span class="section-title">日本各地區重點</span>
+    </div>
+    <div class="note-card">
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🗼</span>東京</div>
+        <div class="note-body">
+          <strong>交通：</strong>JR Pass 或 Suica，地鐵網絡發達。<br>
+          <strong>必去：</strong>淺草寺、新宿、澀谷、原宿、築地、晴空塔、秋葉原。<br>
+          <strong>必吃：</strong>壽司、拉麵、天婦羅、築地海鮮丼。
+        </div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">⛩️</span>京都 / 大阪</div>
+        <div class="note-body">
+          <strong>京都必去：</strong>伏見稻荷、嵐山、金閣寺、清水寺、祗園。<br>
+          <strong>大阪必去：</strong>道頓堀、心齋橋、大阪城、黑門市場。<br>
+          <strong>必吃：</strong>章魚燒、大阪燒、串炸、京都湯豆腐。
+        </div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🌸</span>3 月特別提示</div>
+        <div class="note-body">
+          3 月下旬至 4 月初是賞櫻季！提早確認各地櫻花預測開花時間。<br>
+          熱門景點（上野公園、哲學之道）人潮極多，建議早上前往。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 注意事項 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🚨</span>
+      <span class="section-title">在日本注意事項</span>
+    </div>
+    <div class="note-card">
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🚬</span>禁菸規定嚴格</div>
+        <div class="note-body">路上不能邊走邊抽菸，只能在指定吸菸區。餐廳大多全面禁菸。</div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🗑️</span>垃圾分類</div>
+        <div class="note-body">街上幾乎沒有垃圾桶，垃圾請自己帶著走，或丟超商垃圾桶（購物後）。</div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🚇</span>地鐵禮儀</div>
+        <div class="note-body">地鐵內請靜音、不講電話、不吃東西。讓位給老人、孕婦。</div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">♨️</span>溫泉禮儀</div>
+        <div class="note-body">入浴前必須沖洗身體。有刺青通常禁止進入公共溫泉（部分旅館例外）。</div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🆘</span>緊急狀況</div>
+        <div class="note-body">報警：110｜救護車/消防：119<br>台灣駐日代表處急難救助（東京）：+81-3-3280-7917</div>
+      </div>
+    </div>
+  </div>
+
+  <button class="reset-btn" onclick="resetAll()">↺ 重設所有項目</button>
+
+  <footer>台灣旅遊出發清單 · 資訊僅供參考，出發前請確認最新規定</footer>
+</div>
+
+<script>
+  function getState() { try { return JSON.parse(localStorage.getItem('japan-checklist') || '{}'); } catch { return {}; } }
+  function saveState(state) { localStorage.setItem('japan-checklist', JSON.stringify(state)); }
+  function toggle(el) {
+    el.classList.toggle('checked');
+    const state = getState();
+    const key = el.dataset.group + '-' + Array.from(el.parentElement.children).indexOf(el);
+    state[key] = el.classList.contains('checked');
+    saveState(state);
+    updateProgress();
+  }
+  function updateProgress() {
+    const items = document.querySelectorAll('.item[data-group]');
+    const total = items.length;
+    const done = document.querySelectorAll('.item[data-group].checked').length;
+    document.getElementById('progress-text').textContent = done + ' / ' + total;
+    document.getElementById('progress-fill').style.width = (total ? (done / total * 100) : 0) + '%';
+    document.getElementById('done-banner').classList.toggle('show', done === total && total > 0);
+    ['docs','phone','money','health'].forEach(g => {
+      const gItems = document.querySelectorAll(`.item[data-group="${g}"]`);
+      const gDone = document.querySelectorAll(`.item[data-group="${g}"].checked`).length;
+      const el = document.getElementById('count-' + g);
+      if (el) el.textContent = gDone + '/' + gItems.length;
+    });
+  }
+  function resetAll() {
+    if (!confirm('確定要重設所有勾選項目嗎？')) return;
+    document.querySelectorAll('.item.checked').forEach(el => el.classList.remove('checked'));
+    saveState({});
+    updateProgress();
+  }
+  window.onload = function () {
+    const state = getState();
+    document.querySelectorAll('.item[data-group]').forEach(el => {
+      const key = el.dataset.group + '-' + Array.from(el.parentElement.children).indexOf(el);
+      if (state[key]) el.classList.add('checked');
+    });
+    updateProgress();
+  };
+</script>
+</body>
+</html>

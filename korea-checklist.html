@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台灣人去韓國 出發清單</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8;
+      color: #1a202c;
+      min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute;
+      top: 18px;
+      left: 16px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    header {
+      background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+      color: white;
+      padding: 24px 20px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .progress-bar-wrap { background: #f0f4f8; padding: 16px 20px 0; }
+    .progress-label { display: flex; justify-content: space-between; font-size: 0.8rem; color: #718096; margin-bottom: 6px; }
+    .progress-bar { height: 8px; background: #e2e8f0; border-radius: 99px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #48bb78, #38a169); border-radius: 99px; transition: width 0.4s ease; width: 0%; }
+    .container { padding: 16px 20px 80px; max-width: 600px; margin: 0 auto; }
+    .alert { background: #fff3cd; border-left: 4px solid #f6ad55; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6; }
+    .alert.green { background: #f0fff4; border-left-color: #48bb78; }
+    .alert.red { background: #fff5f5; border-left-color: #fc8181; }
+    .alert strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+    .section { margin-bottom: 20px; }
+    .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .section-icon { font-size: 1.2rem; }
+    .section-title { font-size: 1rem; font-weight: 700; color: #2d3748; }
+    .section-count { margin-left: auto; font-size: 0.78rem; color: #a0aec0; }
+    .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; border-bottom: 1px solid #f7fafc; cursor: pointer; transition: background 0.15s; -webkit-tap-highlight-color: transparent; }
+    .item:last-child { border-bottom: none; }
+    .item:active { background: #f7fafc; }
+    .item.checked { opacity: 0.55; }
+    .item.checked .item-name { text-decoration: line-through; color: #a0aec0; }
+    .checkbox { width: 22px; height: 22px; border-radius: 6px; border: 2px solid #cbd5e0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; transition: all 0.2s; }
+    .item.checked .checkbox { background: #48bb78; border-color: #48bb78; }
+    .checkbox-icon { display: none; color: white; font-size: 13px; font-weight: 700; }
+    .item.checked .checkbox-icon { display: block; }
+    .item-content { flex: 1; }
+    .item-name { font-size: 0.95rem; font-weight: 600; line-height: 1.4; }
+    .item-note { font-size: 0.8rem; color: #718096; margin-top: 3px; line-height: 1.5; }
+    .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 7px; border-radius: 99px; margin-left: 6px; vertical-align: middle; position: relative; top: -1px; }
+    .tag-red { background: #fff5f5; color: #e53e3e; }
+    .tag-orange { background: #fffaf0; color: #dd6b20; }
+    .tag-blue { background: #ebf8ff; color: #3182ce; }
+    .note-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); overflow: hidden; margin-bottom: 20px; }
+    .note-item { padding: 14px 16px; border-bottom: 1px solid #f7fafc; font-size: 0.88rem; line-height: 1.6; }
+    .note-item:last-child { border-bottom: none; }
+    .note-item .icon { font-size: 1.1rem; margin-right: 8px; }
+    .note-title { font-weight: 700; margin-bottom: 3px; display: flex; align-items: center; }
+    .note-body { color: #4a5568; padding-left: 26px; }
+    .reset-btn { display: block; margin: 0 auto 20px; padding: 10px 24px; background: white; color: #718096; border: 1px solid #e2e8f0; border-radius: 99px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+    .reset-btn:hover { background: #f7fafc; }
+    .done-banner { display: none; background: linear-gradient(135deg, #48bb78, #38a169); color: white; text-align: center; padding: 16px; border-radius: 12px; margin-bottom: 20px; font-size: 1rem; font-weight: 700; }
+    .done-banner.show { display: block; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-btn">‹ 回首頁</a>
+  <div class="flag">🇹🇼 ✈️ 🇰🇷</div>
+  <h1>台灣人去韓國</h1>
+  <p>出發前確認清單・Taiwan → South Korea</p>
+</header>
+
+<div class="progress-bar-wrap">
+  <div class="container" style="padding: 0; padding-top: 16px;">
+    <div class="progress-label">
+      <span>完成進度</span>
+      <span id="progress-text">0 / 0</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="done-banner" id="done-banner">🎉 全部完成！祝旅途平安順利！</div>
+
+  <div class="alert green" style="margin-top: 16px;">
+    <strong>✅ 台灣人去韓國免簽！</strong>
+    觀光最長停留 90 天，護照效期需 6 個月以上。入境填寫 K-ETA 電子旅行許可（免費）。
+  </div>
+
+  <div class="alert red">
+    <strong>⚠️ K-ETA 注意</strong>
+    部分期間韓國暫停 K-ETA 要求（免填），出發前請至韓國觀光公社或外交部網站確認最新規定。
+  </div>
+
+  <!-- 1. 必備文件 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📄</span>
+      <span class="section-title">必備文件</span>
+      <span class="section-count" id="count-docs"></span>
+    </div>
+    <div class="card" id="group-docs">
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">護照 <span class="tag tag-red">必備</span></div>
+          <div class="item-note">效期至少 6 個月以上。入境韓國以護照為主要文件。</div>
+        </div>
+      </div>
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">K-ETA（確認是否需要申請）</div>
+          <div class="item-note">可至 k-eta.go.kr 申請，費用約 ₩10,000。部分時期暫停，出發前確認。</div>
+        </div>
+      </div>
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">來回機票（電子票）</div>
+          <div class="item-note">截圖備好，入境時海關可能詢問回程資訊。</div>
+        </div>
+      </div>
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">住宿訂房確認單</div>
+          <div class="item-note">入境卡需填寫住宿地址，提前截圖備用。</div>
+        </div>
+      </div>
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">旅遊醫療保險</div>
+          <div class="item-note">韓國醫療相對較便宜，但保險仍建議購買。</div>
+        </div>
+      </div>
+      <div class="item" data-group="docs" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">緊急聯絡資訊備份</div>
+          <div class="item-note">台灣駐韓代表處急難救助：+82-2-399-2780</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 手機 & 網路 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📱</span>
+      <span class="section-title">手機 & 網路</span>
+      <span class="section-count" id="count-phone"></span>
+    </div>
+    <div class="card" id="group-phone">
+      <div class="item" data-group="phone" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">韓國 SIM 卡 <span class="tag tag-red">必備</span></div>
+          <div class="item-note">建議在台灣先買好（蝦皮、韓國旅遊 SIM），到仁川機場也可直接取卡。SKT、KT、LG U+ 訊號都很好。</div>
+        </div>
+      </div>
+      <div class="item" data-group="phone" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">下載 Naver Maps <span class="tag tag-orange">重要</span></div>
+          <div class="item-note">韓國 Google Maps 路線規劃不準確，Naver Maps 是當地主流，有中文介面。</div>
+        </div>
+      </div>
+      <div class="item" data-group="phone" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">下載 Kakao Map（備用）</div>
+          <div class="item-note">Kakao Map 也是常用地圖 App，部分地點比 Naver 更詳細。</div>
+        </div>
+      </div>
+      <div class="item" data-group="phone" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">充電頭（韓國 220V，需確認）</div>
+          <div class="item-note">韓國電壓 220V，插頭為兩孔圓型（歐式）。台灣充電器若支援 100-240V 只需轉接頭即可，飯店通常有提供。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 金錢 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">💵</span>
+      <span class="section-title">金錢 & 支付</span>
+      <span class="section-count" id="count-money"></span>
+    </div>
+    <div class="card" id="group-money">
+      <div class="item" data-group="money" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">韓幣現金（韓元 KRW）</div>
+          <div class="item-note">傳統市場、街邊小吃、計程車建議帶現金。仁川機場換匯率普通，建議先換少量，到市區換錢所（명동환전）匯率更好。</div>
+        </div>
+      </div>
+      <div class="item" data-group="money" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">T-money 交通卡</div>
+          <div class="item-note">地鐵、公車、計程車都能用，還有轉乘優惠。超商（GS25、CU）或地鐵站購買，押金 ₩500。Apple Pay 可辦 T-money（部分機型）。</div>
+        </div>
+      </div>
+      <div class="item" data-group="money" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">Visa / Mastercard 信用卡</div>
+          <div class="item-note">韓國大型商場、餐廳、便利商店普遍接受刷卡，比日本方便很多。</div>
+        </div>
+      </div>
+      <div class="item" data-group="money" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">通知信用卡公司出國消費</div>
+          <div class="item-note">避免刷卡被誤判為異常交易而被鎖卡。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 健康 & 行李 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🧳</span>
+      <span class="section-title">健康 & 行李</span>
+      <span class="section-count" id="count-health"></span>
+    </div>
+    <div class="card" id="group-health">
+      <div class="item" data-group="health" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">保暖衣物（3 月仍冷）</div>
+          <div class="item-note">首爾 3 月氣溫約 2–11°C，早晚溫差大。外套、圍巾必備。釜山稍暖但仍涼。</div>
+        </div>
+      </div>
+      <div class="item" data-group="health" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">保濕乳液 & 護唇膏</div>
+          <div class="item-note">韓國冬春季節非常乾燥，皮膚容易乾裂。</div>
+        </div>
+      </div>
+      <div class="item" data-group="health" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">腸胃藥 & 感冒藥</div>
+          <div class="item-note">韓國料理偏辣，腸胃不好的人建議備妥。</div>
+        </div>
+      </div>
+      <div class="item" data-group="health" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">行動電源（≤ 20,000 mAh，隨身攜帶）</div>
+          <div class="item-note">不可託運。韓國也有 Kakao T 共享充電站。</div>
+        </div>
+      </div>
+      <div class="item" data-group="health" onclick="toggle(this)">
+        <div class="checkbox"><span class="checkbox-icon">✓</span></div>
+        <div class="item-content">
+          <div class="item-name">歐式轉接頭（圓形兩孔）</div>
+          <div class="item-note">韓國插座為圓形兩孔（220V），台灣電器需要轉接頭。飯店通常有備用，可先確認。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 首爾導覽 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🇰🇷</span>
+      <span class="section-title">韓國各地區重點</span>
+    </div>
+    <div class="note-card">
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🏙️</span>首爾</div>
+        <div class="note-body">
+          <strong>購物：</strong>明洞（化妝品、街邊美食）、弘大（年輕潮流）、東大門（24 小時購物）、江南。<br>
+          <strong>景點：</strong>景福宮、北村韓屋村、南山首爾塔、益善洞巷弄。<br>
+          <strong>必吃：</strong>韓式烤肉、辣炒年糕、炸雞啤酒、삼겹살（五花肉）、海鮮煎餅。
+        </div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🌊</span>釜山</div>
+        <div class="note-body">
+          <strong>景點：</strong>海雲台海水浴場、廣安里海灘、甘川洞文化村、海東龍宮寺。<br>
+          <strong>必吃：</strong>豬肉湯飯（돼지국밥）、釜山魚板、海鮮。
+        </div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🌸</span>3 月特別提示</div>
+        <div class="note-body">
+          3 月底至 4 月初韓國也有櫻花季！汝矣島春花節是首爾最著名的賞櫻地點。<br>
+          慶州（古都）的春天非常美，適合一日遊。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 注意事項 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🚨</span>
+      <span class="section-title">在韓國注意事項</span>
+    </div>
+    <div class="note-card">
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🚕</span>交通</div>
+        <div class="note-body">Kakao T 是主流叫車 App（類似 Uber）。計程車普遍，用 T-money 付車資有優惠。地鐵非常便宜又方便。</div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🛍️</span>退稅</div>
+        <div class="note-body">在標有「Tax Free」的商店購物滿一定金額可退稅，離境時在機場辦理。Global Blue、Premier Tax Free 是主要退稅機構。</div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">📸</span>拍照禮儀</div>
+        <div class="note-body">軍事設施附近禁止拍照。拍攝路人前最好取得同意，韓國人對隱私較敏感。</div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🍺</span>飲酒文化</div>
+        <div class="note-body">韓國街邊便利商店可以喝酒，但公共場所（地鐵、公車）禁止飲酒。</div>
+      </div>
+      <div class="note-item">
+        <div class="note-title"><span class="icon">🆘</span>緊急狀況</div>
+        <div class="note-body">報警：112｜救護車/消防：119<br>台灣駐韓代表處急難救助：+82-2-399-2780</div>
+      </div>
+    </div>
+  </div>
+
+  <button class="reset-btn" onclick="resetAll()">↺ 重設所有項目</button>
+
+  <footer>台灣旅遊出發清單 · 資訊僅供參考，出發前請確認最新規定</footer>
+</div>
+
+<script>
+  function getState() { try { return JSON.parse(localStorage.getItem('korea-checklist') || '{}'); } catch { return {}; } }
+  function saveState(state) { localStorage.setItem('korea-checklist', JSON.stringify(state)); }
+  function toggle(el) {
+    el.classList.toggle('checked');
+    const state = getState();
+    const key = el.dataset.group + '-' + Array.from(el.parentElement.children).indexOf(el);
+    state[key] = el.classList.contains('checked');
+    saveState(state);
+    updateProgress();
+  }
+  function updateProgress() {
+    const items = document.querySelectorAll('.item[data-group]');
+    const total = items.length;
+    const done = document.querySelectorAll('.item[data-group].checked').length;
+    document.getElementById('progress-text').textContent = done + ' / ' + total;
+    document.getElementById('progress-fill').style.width = (total ? (done / total * 100) : 0) + '%';
+    document.getElementById('done-banner').classList.toggle('show', done === total && total > 0);
+    ['docs','phone','money','health'].forEach(g => {
+      const gItems = document.querySelectorAll(`.item[data-group="${g}"]`);
+      const gDone = document.querySelectorAll(`.item[data-group="${g}"].checked`).length;
+      const el = document.getElementById('count-' + g);
+      if (el) el.textContent = gDone + '/' + gItems.length;
+    });
+  }
+  function resetAll() {
+    if (!confirm('確定要重設所有勾選項目嗎？')) return;
+    document.querySelectorAll('.item.checked').forEach(el => el.classList.remove('checked'));
+    saveState({});
+    updateProgress();
+  }
+  window.onload = function () {
+    const state = getState();
+    document.querySelectorAll('.item[data-group]').forEach(el => {
+      const key = el.dataset.group + '-' + Array.from(el.parentElement.children).indexOf(el);
+      if (state[key]) el.classList.add('checked');
+    });
+    updateProgress();
+  };
+</script>
+</body>
+</html>

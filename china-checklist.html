@@ -14,11 +14,23 @@
       min-height: 100vh;
     }
 
+    .back-btn {
+      position: absolute;
+      top: 18px;
+      left: 16px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
     header {
       background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
       color: white;
       padding: 24px 20px 20px;
       text-align: center;
+      position: relative;
     }
 
     header .flag { font-size: 2rem; margin-bottom: 6px; }
@@ -220,6 +232,7 @@
 <body>
 
 <header>
+  <a href="index.html" class="back-btn">‹ 回首頁</a>
   <div class="flag">🇹🇼 ✈️ 🇨🇳</div>
   <h1>台灣人去廣州</h1>
   <p>出發前確認清單・Taiwan → Guangzhou</p>

@@ -192,6 +192,17 @@
     .note-title { font-weight: 700; margin-bottom: 3px; display: flex; align-items: center; }
     .note-body { color: #4a5568; padding-left: 26px; }
 
+    .source-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); padding: 16px; margin-bottom: 20px; }
+    .source-card-title { font-size: 0.78rem; font-weight: 700; color: #a0aec0; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .source-row { display: flex; align-items: center; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid #f7fafc; font-size: 0.85rem; }
+    .source-row:last-of-type { border-bottom: none; }
+    .source-name { color: #2d3748; font-weight: 600; }
+    .source-desc { font-size: 0.75rem; color: #718096; margin-top: 1px; }
+    .source-btn { color: #3182ce; text-decoration: none; font-size: 0.75rem; padding: 3px 10px; border: 1px solid #bee3f8; border-radius: 99px; white-space: nowrap; flex-shrink: 0; margin-left: 8px; }
+    .source-btn:hover { background: #ebf8ff; }
+    .verified-note { font-size: 0.75rem; color: #a0aec0; margin-top: 12px; padding-top: 10px; border-top: 1px solid #f7fafc; }
+    .inline-src { font-size: 0.75rem; color: #3182ce; text-decoration: none; margin-left: 6px; }
+    .inline-src:hover { text-decoration: underline; }
     /* Reset button */
     .reset-btn {
       display: block;
@@ -262,6 +273,8 @@
     1. 確認台胞證效期（至少剩 6 個月）<br>
     2. <strong>在台灣裝好 VPN</strong>（到了大陸就下載不到）<br>
     3. 設定 Alipay 或 WeChat Pay（現金越來越難用）
+    <br><a href="https://www.mac.gov.tw" target="_blank" class="inline-src">🔗 陸委會・兩岸旅遊資訊</a>
+    <a href="https://www.boca.gov.tw" target="_blank" class="inline-src">🔗 台灣外交部領事局</a>
   </div>
 
   <!-- 1. 必備文件 -->
@@ -575,6 +588,51 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- 官方來源 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🔍</span>
+      <span class="section-title">官方資訊來源</span>
+    </div>
+    <div class="source-card">
+      <div class="source-card-title">出發前建議至官方網站確認最新規定</div>
+
+      <div class="source-row">
+        <div>
+          <div class="source-name">陸委會（行政院大陸委員會）</div>
+          <div class="source-desc">兩岸旅遊規定、最新公告</div>
+        </div>
+        <a href="https://www.mac.gov.tw" target="_blank" class="source-btn">前往 →</a>
+      </div>
+
+      <div class="source-row">
+        <div>
+          <div class="source-name">台灣外交部領事事務局</div>
+          <div class="source-desc">護照、急難救助、旅遊警示</div>
+        </div>
+        <a href="https://www.boca.gov.tw" target="_blank" class="source-btn">前往 →</a>
+      </div>
+
+      <div class="source-row">
+        <div>
+          <div class="source-name">海基會</div>
+          <div class="source-desc">台胞證、兩岸事務諮詢</div>
+        </div>
+        <a href="https://www.sef.org.tw" target="_blank" class="source-btn">前往 →</a>
+      </div>
+
+      <div class="source-row">
+        <div>
+          <div class="source-name">外交部旅遊警示查詢</div>
+          <div class="source-desc">確認目的地安全等級</div>
+        </div>
+        <a href="https://www.boca.gov.tw/sp-trwa-list-1.html" target="_blank" class="source-btn">前往 →</a>
+      </div>
+
+      <div class="verified-note">⏱ 本頁資訊參考自 2025 年 8 月，兩岸政策變動頻繁，請出發前務必至陸委會確認最新規定。</div>
     </div>
   </div>
 

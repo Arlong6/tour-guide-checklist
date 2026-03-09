@@ -72,6 +72,17 @@
     .note-body { color: #4a5568; padding-left: 26px; }
     .reset-btn { display: block; margin: 0 auto 20px; padding: 10px 24px; background: white; color: #718096; border: 1px solid #e2e8f0; border-radius: 99px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
     .reset-btn:hover { background: #f7fafc; }
+    .source-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); padding: 16px; margin-bottom: 20px; }
+    .source-card-title { font-size: 0.78rem; font-weight: 700; color: #a0aec0; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .source-row { display: flex; align-items: center; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid #f7fafc; font-size: 0.85rem; }
+    .source-row:last-of-type { border-bottom: none; }
+    .source-name { color: #2d3748; font-weight: 600; }
+    .source-desc { font-size: 0.75rem; color: #718096; margin-top: 1px; }
+    .source-btn { color: #3182ce; text-decoration: none; font-size: 0.75rem; padding: 3px 10px; border: 1px solid #bee3f8; border-radius: 99px; white-space: nowrap; flex-shrink: 0; margin-left: 8px; }
+    .source-btn:hover { background: #ebf8ff; }
+    .verified-note { font-size: 0.75rem; color: #a0aec0; margin-top: 12px; padding-top: 10px; border-top: 1px solid #f7fafc; }
+    .inline-src { font-size: 0.75rem; color: #3182ce; text-decoration: none; margin-left: 6px; }
+    .inline-src:hover { text-decoration: underline; }
     .done-banner { display: none; background: linear-gradient(135deg, #48bb78, #38a169); color: white; text-align: center; padding: 16px; border-radius: 12px; margin-bottom: 20px; font-size: 1rem; font-weight: 700; }
     .done-banner.show { display: block; }
     footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
@@ -103,11 +114,13 @@
   <div class="alert green" style="margin-top: 16px;">
     <strong>✅ 台灣人去韓國免簽！</strong>
     觀光最長停留 90 天，護照效期需 6 個月以上。入境填寫 K-ETA 電子旅行許可（免費）。
+    <br><a href="https://www.boca.gov.tw" target="_blank" class="inline-src">🔗 台灣外交部領事局</a>
   </div>
 
   <div class="alert red">
     <strong>⚠️ K-ETA 注意</strong>
-    部分期間韓國暫停 K-ETA 要求（免填），出發前請至韓國觀光公社或外交部網站確認最新規定。
+    部分期間韓國暫停 K-ETA 要求（免填），出發前請至官方網站確認最新規定。
+    <br><a href="https://www.k-eta.go.kr" target="_blank" class="inline-src">🔗 K-ETA 官方申請網站</a>
   </div>
 
   <!-- 1. 必備文件 -->
@@ -346,6 +359,51 @@
         <div class="note-title"><span class="icon">🆘</span>緊急狀況</div>
         <div class="note-body">報警：112｜救護車/消防：119<br>台灣駐韓代表處急難救助：+82-2-399-2780</div>
       </div>
+    </div>
+  </div>
+
+  <!-- 官方來源 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🔍</span>
+      <span class="section-title">官方資訊來源</span>
+    </div>
+    <div class="source-card">
+      <div class="source-card-title">出發前建議至官方網站確認最新規定</div>
+
+      <div class="source-row">
+        <div>
+          <div class="source-name">台灣外交部領事事務局</div>
+          <div class="source-desc">護照申請、海外急難救助</div>
+        </div>
+        <a href="https://www.boca.gov.tw" target="_blank" class="source-btn">前往 →</a>
+      </div>
+
+      <div class="source-row">
+        <div>
+          <div class="source-name">K-ETA 官方申請網站</div>
+          <div class="source-desc">確認是否需要申請、線上辦理</div>
+        </div>
+        <a href="https://www.k-eta.go.kr" target="_blank" class="source-btn">前往 →</a>
+      </div>
+
+      <div class="source-row">
+        <div>
+          <div class="source-name">韓國觀光公社（繁體中文）</div>
+          <div class="source-desc">景點、活動、旅遊資訊</div>
+        </div>
+        <a href="https://big5chinese.visitkorea.or.kr" target="_blank" class="source-btn">前往 →</a>
+      </div>
+
+      <div class="source-row">
+        <div>
+          <div class="source-name">韓國入境管理局</div>
+          <div class="source-desc">入境、居留相關規定</div>
+        </div>
+        <a href="https://www.immigration.go.kr" target="_blank" class="source-btn">前往 →</a>
+      </div>
+
+      <div class="verified-note">⏱ 本頁資訊參考自 2025 年 8 月，部分規定可能已更新，請出發前至官方網站確認。</div>
     </div>
   </div>
 

@@ -110,7 +110,9 @@
 
   <div class="done-banner" id="done-banner">🎉 全部完成！祝旅途平安順利！</div>
 
-  <div class="alert green" style="margin-top: 16px;">
+  <div id="entry-info" style="margin-top: 16px;"></div>
+
+  <div class="alert green" style="margin-top: 0;">
     <strong>✅ 台灣人去日本免簽！</strong>
     觀光最長停留 90 天，護照效期需 6 個月以上。無需提前申請簽證，入境填寫入境卡即可。
     <br><a href="https://www.mofa.go.jp/j_info/visit/visa/index.html" target="_blank" class="inline-src">🔗 日本外務省・簽證資訊</a>
@@ -429,6 +431,36 @@
 </div>
 
 <script>
+  // --- 動態讀取 data.json ---
+  const STATUS_COLOR = { green: '#48bb78', yellow: '#ed8936', red: '#e53e3e' };
+  const STATUS_BG    = { green: '#f0fff4', yellow: '#fffaf0', red: '#fff5f5' };
+  const STATUS_BORDER= { green: '#48bb78', yellow: '#ed8936', red: '#e53e3e' };
+
+  fetch('./data.json')
+    .then(r => r.json())
+    .then(data => {
+      const c = data.japan;
+      const e = c.entry;
+      const el = document.getElementById('entry-info');
+      if (!el) return;
+      const col = STATUS_COLOR[e.status] || '#a0aec0';
+      const bg  = STATUS_BG[e.status]    || '#f7fafc';
+      const bdr = STATUS_BORDER[e.status]|| '#e2e8f0';
+      el.innerHTML = `
+        <div style="background:${bg};border-left:4px solid ${bdr};border-radius:8px;padding:14px 16px;margin-bottom:12px;">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+            <span style="background:${col};color:white;font-size:0.72rem;font-weight:700;padding:2px 10px;border-radius:99px;">${e.statusText}</span>
+            <span style="font-size:0.82rem;font-weight:700;color:#2d3748;">最長停留 ${e.maxDays} 天</span>
+            <span style="font-size:0.75rem;color:#718096;">護照效期 ${e.passportValidity}</span>
+          </div>
+          ${e.notes.map(n => `<div style="font-size:0.82rem;color:#4a5568;margin-bottom:3px;padding-left:4px;">・${n}</div>`).join('')}
+          <div style="font-size:0.72rem;color:#a0aec0;margin-top:10px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.06);">
+            ⏱ 資料更新日期：${data.lastUpdated}　｜　如有異動以官方公告為準
+          </div>
+        </div>`;
+    })
+    .catch(() => {});
+
   function getState() { try { return JSON.parse(localStorage.getItem('japan-checklist') || '{}'); } catch { return {}; } }
   function saveState(state) { localStorage.setItem('japan-checklist', JSON.stringify(state)); }
   function toggle(el) {

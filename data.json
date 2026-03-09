@@ -1,0 +1,81 @@
+{
+  "lastUpdated": "2025-08-01",
+  "japan": {
+    "entry": {
+      "status": "green",
+      "statusText": "免簽入境",
+      "maxDays": 90,
+      "passportValidity": "6 個月以上",
+      "etaRequired": false,
+      "etaNote": null,
+      "notes": [
+        "觀光免簽，最長停留 90 天",
+        "入境時需填寫入境卡",
+        "需出示回程機票及住宿訂房資訊"
+      ]
+    },
+    "emergency": {
+      "police": "110",
+      "ambulance": "119",
+      "taiwanRep": "+81-3-3280-7917",
+      "taiwanRepName": "台灣駐日代表處（東京）"
+    },
+    "currency": "JPY（日圓）",
+    "timezone": "UTC+9",
+    "voltage": "100V",
+    "plugType": "A 型（兩孔扁型，與台灣相同，無需轉接頭）"
+  },
+  "korea": {
+    "entry": {
+      "status": "green",
+      "statusText": "免簽入境",
+      "maxDays": 90,
+      "passportValidity": "6 個月以上",
+      "etaRequired": false,
+      "etaNote": "K-ETA 目前暫停要求（2024 年起），出發前請至官方網站確認最新狀態",
+      "etaUrl": "https://www.k-eta.go.kr",
+      "notes": [
+        "觀光免簽，最長停留 90 天",
+        "K-ETA 狀態請出發前確認（可能恢復要求）",
+        "入境卡需填寫在韓住宿地址"
+      ]
+    },
+    "emergency": {
+      "police": "112",
+      "ambulance": "119",
+      "taiwanRep": "+82-2-399-2780",
+      "taiwanRepName": "台灣駐韓代表處（首爾）"
+    },
+    "currency": "KRW（韓元）",
+    "timezone": "UTC+9",
+    "voltage": "220V",
+    "plugType": "C/F 型（兩孔圓型，需轉接頭）"
+  },
+  "china": {
+    "entry": {
+      "status": "yellow",
+      "statusText": "需台胞證",
+      "maxDays": null,
+      "passportValidity": "6 個月以上（輔助文件）",
+      "requiresTaiwanPass": true,
+      "taiwanPassNote": "台胞證（台灣居民來往大陸通行證），效期至少剩 6 個月",
+      "notes": [
+        "台胞證為入境主要文件（非護照）",
+        "台胞證效期不足請提前至海基會換證",
+        "VPN 必須在台灣出發前安裝完成",
+        "建議出發前至陸委會確認最新兩岸規定"
+      ]
+    },
+    "emergency": {
+      "police": "110",
+      "ambulance": "120",
+      "fire": "119",
+      "taiwanRep": "+86-400-808-0900",
+      "taiwanRepName": "台灣駐陸辦事處急難救助"
+    },
+    "currency": "CNY（人民幣）",
+    "timezone": "UTC+8",
+    "voltage": "220V",
+    "plugType": "A/I 型（兩孔扁型或三孔，與台灣相同）"
+  }
+}

@@ -267,8 +267,10 @@
     🎉 全部完成！祝旅途平安順利！
   </div>
 
+  <div id="entry-info" style="margin-top: 16px;"></div>
+
   <!-- 緊急提醒 -->
-  <div class="alert red" style="margin-top: 16px;">
+  <div class="alert red" style="margin-top: 0;">
     <strong>⚠️ 出發前最重要的三件事</strong>
     1. 確認台胞證效期（至少剩 6 個月）<br>
     2. <strong>在台灣裝好 VPN</strong>（到了大陸就下載不到）<br>
@@ -670,6 +672,35 @@
 </div>
 
 <script>
+  // --- 動態讀取 data.json ---
+  const STATUS_COLOR = { green: '#48bb78', yellow: '#ed8936', red: '#e53e3e' };
+  const STATUS_BG    = { green: '#f0fff4', yellow: '#fffaf0', red: '#fff5f5' };
+  const STATUS_BORDER= { green: '#48bb78', yellow: '#ed8936', red: '#e53e3e' };
+
+  fetch('./data.json')
+    .then(r => r.json())
+    .then(data => {
+      const c = data.china;
+      const e = c.entry;
+      const el = document.getElementById('entry-info');
+      if (!el) return;
+      const col = STATUS_COLOR[e.status] || '#a0aec0';
+      const bg  = STATUS_BG[e.status]    || '#f7fafc';
+      const bdr = STATUS_BORDER[e.status]|| '#e2e8f0';
+      el.innerHTML = `
+        <div style="background:${bg};border-left:4px solid ${bdr};border-radius:8px;padding:14px 16px;margin-bottom:12px;">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+            <span style="background:${col};color:white;font-size:0.72rem;font-weight:700;padding:2px 10px;border-radius:99px;">${e.statusText}</span>
+            <span style="font-size:0.82rem;font-weight:700;color:#2d3748;">${e.taiwanPassNote}</span>
+          </div>
+          ${e.notes.map(n => `<div style="font-size:0.82rem;color:#4a5568;margin-bottom:3px;padding-left:4px;">・${n}</div>`).join('')}
+          <div style="font-size:0.72rem;color:#a0aec0;margin-top:10px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.06);">
+            ⏱ 資料更新日期：${data.lastUpdated}　｜　兩岸政策變動頻繁，請出發前至陸委會確認
+          </div>
+        </div>`;
+    })
+    .catch(() => {});
+
   // Load saved state
   function getState() {
     try { return JSON.parse(localStorage.getItem('china-checklist') || '{}'); } catch { return {}; }

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>匯率換算 | 旅遊出發清單</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8;
+      color: #1a202c;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2b6cb0 0%, #4299e1 100%);
+      color: white;
+      padding: 28px 20px 32px;
+      text-align: center;
+      position: relative;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 16px;
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      transition: background 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .back-btn:active {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    header .icon { font-size: 2.4rem; margin-bottom: 8px; }
+    header h1 { font-size: 1.6rem; font-weight: 800; margin-bottom: 6px; }
+    header p { font-size: 0.88rem; opacity: 0.85; }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+    }
+
+    /* TWD Input Section */
+    .input-section {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .input-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #a0aec0;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .twd-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .twd-flag {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .twd-input-wrap {
+      flex: 1;
+      position: relative;
+    }
+
+    .twd-input-wrap .currency-code {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      font-weight: 700;
+      color: #718096;
+      pointer-events: none;
+    }
+
+    #twdInput {
+      width: 100%;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #2b6cb0;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px 14px 12px 62px;
+      outline: none;
+      transition: border-color 0.15s;
+      -webkit-appearance: none;
+    }
+
+    #twdInput:focus {
+      border-color: #4299e1;
+    }
+
+    /* Quick amount buttons */
+    .quick-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #a0aec0;
+      letter-spacing: 0.05em;
+      margin-top: 16px;
+      margin-bottom: 10px;
+    }
+
+    .quick-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .quick-btn {
+      flex: 1 1 calc(33.333% - 8px);
+      min-width: 80px;
+      padding: 9px 4px;
+      background: #ebf8ff;
+      color: #2b6cb0;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s, transform 0.1s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .quick-btn:active {
+      background: #bee3f8;
+      transform: scale(0.96);
+    }
+
+    /* Result cards */
+    .results-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #a0aec0;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      margin-top: 8px;
+    }
+
+    .result-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 18px 20px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .result-flag {
+      font-size: 2.4rem;
+      flex-shrink: 0;
+      width: 48px;
+      text-align: center;
+    }
+
+    .result-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .result-currency {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #a0aec0;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+
+    .result-amount {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #1a202c;
+      line-height: 1.1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .result-rate {
+      font-size: 0.76rem;
+      color: #a0aec0;
+      margin-top: 4px;
+    }
+
+    .result-bar {
+      width: 4px;
+      height: 56px;
+      border-radius: 99px;
+      flex-shrink: 0;
+    }
+
+    /* Warning / note card */
+    .note-card {
+      background: #fffbeb;
+      border: 1px solid #fbd38d;
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-top: 8px;
+      font-size: 0.82rem;
+      color: #744210;
+      line-height: 1.6;
+    }
+
+    .note-card a {
+      color: #2b6cb0;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .note-card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #a0aec0;
+      margin-top: 28px;
+    }
+  </style>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2b6cb0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <script>if("serviceWorker"in navigator)navigator.serviceWorker.register("./sw.js");</script>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-btn">‹ 回首頁</a>
+  <div class="icon">💱</div>
+  <h1>匯率換算</h1>
+  <p>台幣快速換算・TWD Currency Calculator</p>
+</header>
+
+<div class="container">
+
+  <!-- TWD Input -->
+  <div class="input-section">
+    <div class="input-label">輸入台幣金額</div>
+    <div class="twd-row">
+      <div class="twd-flag">🇹🇼</div>
+      <div class="twd-input-wrap">
+        <span class="currency-code">TWD</span>
+        <input
+          type="number"
+          id="twdInput"
+          inputmode="numeric"
+          placeholder="10000"
+          value="10000"
+          min="0"
+        >
+      </div>
+    </div>
+
+    <div class="quick-label">快速金額</div>
+    <div class="quick-btns">
+      <button class="quick-btn" onclick="setAmount(1000)">1,000</button>
+      <button class="quick-btn" onclick="setAmount(3000)">3,000</button>
+      <button class="quick-btn" onclick="setAmount(5000)">5,000</button>
+      <button class="quick-btn" onclick="setAmount(10000)">10,000</button>
+      <button class="quick-btn" onclick="setAmount(30000)">30,000</button>
+      <button class="quick-btn" onclick="setAmount(50000)">50,000</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="results-label">換算結果</div>
+
+  <!-- JPY -->
+  <div class="result-card">
+    <div class="result-bar" style="background: linear-gradient(180deg, #c0392b, #e74c3c);"></div>
+    <div class="result-flag">🇯🇵</div>
+    <div class="result-body">
+      <div class="result-currency">JPY 日圓（參考匯率，請出發前確認）</div>
+      <div class="result-amount" id="jpyResult">48,000</div>
+      <div class="result-rate" id="jpyRate">1 TWD ≈ 4.8 JPY</div>
+    </div>
+  </div>
+
+  <!-- KRW -->
+  <div class="result-card">
+    <div class="result-bar" style="background: linear-gradient(180deg, #c0392b, #3182ce);"></div>
+    <div class="result-flag">🇰🇷</div>
+    <div class="result-body">
+      <div class="result-currency">KRW 韓元</div>
+      <div class="result-amount" id="krwResult">420,000</div>
+      <div class="result-rate" id="krwRate">1 TWD ≈ 42 KRW</div>
+    </div>
+  </div>
+
+  <!-- CNY -->
+  <div class="result-card">
+    <div class="result-bar" style="background: linear-gradient(180deg, #c0392b, #f6ad55);"></div>
+    <div class="result-flag">🇨🇳</div>
+    <div class="result-body">
+      <div class="result-currency">CNY 人民幣</div>
+      <div class="result-amount" id="cnyResult">2,200</div>
+      <div class="result-rate" id="cnyRate">1 TWD ≈ 0.22 CNY</div>
+    </div>
+  </div>
+
+  <!-- Note -->
+  <div class="note-card">
+    ⚠️ 以上匯率為參考值，實際匯率每日變動。出發前請至台灣銀行或各大銀行確認當日匯率。<br><br>
+    <a href="https://www.bot.com.tw" target="_blank" rel="noopener">台灣銀行匯率 →</a>
+  </div>
+
+  <footer>台灣旅遊出發清單 · 匯率僅供參考，請出發前確認最新匯率</footer>
+</div>
+
+<script>
+  // Exchange rates (approximate, as of 2025)
+  const RATES = {
+    JPY: 4.8,
+    KRW: 42,
+    CNY: 0.22
+  };
+
+  const input = document.getElementById('twdInput');
+
+  function formatNumber(num, decimals) {
+    if (decimals === 0) {
+      return Math.round(num).toLocaleString('zh-TW');
+    }
+    return num.toLocaleString('zh-TW', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    });
+  }
+
+  function calculate() {
+    const twd = parseFloat(input.value) || 0;
+
+    // JPY
+    const jpy = twd * RATES.JPY;
+    document.getElementById('jpyResult').textContent = formatNumber(jpy, 0) + ' 円';
+
+    // KRW
+    const krw = twd * RATES.KRW;
+    document.getElementById('krwResult').textContent = '₩' + formatNumber(krw, 0);
+
+    // CNY
+    const cny = twd * RATES.CNY;
+    document.getElementById('cnyResult').textContent = '¥' + formatNumber(cny, 1);
+  }
+
+  function setAmount(amount) {
+    input.value = amount;
+    calculate();
+    input.focus();
+  }
+
+  input.addEventListener('input', calculate);
+
+  // Run once on load with default value
+  calculate();
+</script>
+
+</body>
+</html>

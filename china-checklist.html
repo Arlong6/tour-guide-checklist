@@ -203,6 +203,23 @@
     .verified-note { font-size: 0.75rem; color: #a0aec0; margin-top: 12px; padding-top: 10px; border-top: 1px solid #f7fafc; }
     .inline-src { font-size: 0.75rem; color: #3182ce; text-decoration: none; margin-left: 6px; }
     .inline-src:hover { text-decoration: underline; }
+    .print-btn { display: block; margin: 0 auto 12px; padding: 10px 24px; background: #2b6cb0; color: white; border: none; border-radius: 99px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+    .print-btn:hover { background: #2c5282; }
+    @media print {
+      .back-btn, .progress-bar-wrap, .reset-btn, .print-btn, .done-banner,
+      .section:last-of-type, footer { display: none !important; }
+      header { background: none !important; color: #1a202c !important; padding: 10px 0 6px; border-bottom: 2px solid #1a202c; margin-bottom: 12px; }
+      header .flag { font-size: 1.4rem; }
+      header h1 { font-size: 1.2rem; }
+      header p { font-size: 0.8rem; color: #4a5568; }
+      body { background: white; }
+      .container { padding: 0; }
+      .card, .note-card, .source-card { box-shadow: none; border: 1px solid #e2e8f0; }
+      .item.checked { opacity: 1; }
+      .item.checked .item-name { text-decoration: none; color: #1a202c; }
+      .checkbox { border: 2px solid #1a202c !important; background: white !important; }
+      .alert { border-left: 3px solid #e2e8f0 !important; background: #f7fafc !important; }
+    }
     /* Reset button */
     .reset-btn {
       display: block;
@@ -239,6 +256,11 @@
       padding-bottom: 20px;
     }
   </style>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2b6cb0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <script>if("serviceWorker"in navigator)navigator.serviceWorker.register("./sw.js");</script>
 </head>
 <body>
 
@@ -663,6 +685,7 @@
     </div>
   </div>
 
+  <button class="print-btn" onclick="window.print()">🖨️ 列印 / 儲存 PDF</button>
   <button class="reset-btn" onclick="resetAll()">↺ 重設所有項目</button>
 
   <footer>

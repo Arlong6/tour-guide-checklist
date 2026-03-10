@@ -138,6 +138,11 @@
       padding-top: 8px;
     }
   </style>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2b6cb0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <script>if("serviceWorker"in navigator)navigator.serviceWorker.register("./sw.js");</script>
 </head>
 <body>
 
@@ -199,6 +204,25 @@
           <span class="tag tag-green">免簽 90 天</span>
           <span class="tag tag-gray">T-money 卡</span>
           <span class="tag tag-gray">Naver Maps</span>
+        </div>
+      </div>
+      <div class="card-arrow">›</div>
+    </div>
+  </a>
+
+  <div class="section-label" style="margin-top: 28px;">實用工具</div>
+
+  <a href="calculator.html" class="country-card">
+    <div class="card-bar" style="background: linear-gradient(90deg, #38a169, #48bb78);"></div>
+    <div class="card-inner">
+      <div class="card-flag">💱</div>
+      <div class="card-body">
+        <div class="card-title">匯率換算器</div>
+        <div class="card-subtitle">台幣快速換算 日圓・韓元・人民幣</div>
+        <div class="tag-row">
+          <span class="tag tag-green">JPY</span>
+          <span class="tag tag-green">KRW</span>
+          <span class="tag tag-green">CNY</span>
         </div>
       </div>
       <div class="card-arrow">›</div>

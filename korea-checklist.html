@@ -72,6 +72,23 @@
     .note-body { color: #4a5568; padding-left: 26px; }
     .reset-btn { display: block; margin: 0 auto 20px; padding: 10px 24px; background: white; color: #718096; border: 1px solid #e2e8f0; border-radius: 99px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
     .reset-btn:hover { background: #f7fafc; }
+    .print-btn { display: block; margin: 0 auto 12px; padding: 10px 24px; background: #2b6cb0; color: white; border: none; border-radius: 99px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+    .print-btn:hover { background: #2c5282; }
+    @media print {
+      .back-btn, .progress-bar-wrap, .reset-btn, .print-btn, .done-banner,
+      .section:last-of-type, footer { display: none !important; }
+      header { background: none !important; color: #1a202c !important; padding: 10px 0 6px; border-bottom: 2px solid #1a202c; margin-bottom: 12px; }
+      header .flag { font-size: 1.4rem; }
+      header h1 { font-size: 1.2rem; }
+      header p { font-size: 0.8rem; color: #4a5568; }
+      body { background: white; }
+      .container { padding: 0; }
+      .card, .note-card, .source-card { box-shadow: none; border: 1px solid #e2e8f0; }
+      .item.checked { opacity: 1; }
+      .item.checked .item-name { text-decoration: none; color: #1a202c; }
+      .checkbox { border: 2px solid #1a202c !important; background: white !important; }
+      .alert { border-left: 3px solid #e2e8f0 !important; background: #f7fafc !important; }
+    }
     .source-card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); padding: 16px; margin-bottom: 20px; }
     .source-card-title { font-size: 0.78rem; font-weight: 700; color: #a0aec0; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
     .source-row { display: flex; align-items: center; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid #f7fafc; font-size: 0.85rem; }
@@ -87,6 +104,11 @@
     .done-banner.show { display: block; }
     footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
   </style>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2b6cb0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <script>if("serviceWorker"in navigator)navigator.serviceWorker.register("./sw.js");</script>
 </head>
 <body>
 
@@ -434,6 +456,7 @@
     </div>
   </div>
 
+  <button class="print-btn" onclick="window.print()">🖨️ 列印 / 儲存 PDF</button>
   <button class="reset-btn" onclick="resetAll()">↺ 重設所有項目</button>
 
   <footer>台灣旅遊出發清單 · 資訊僅供參考，出發前請確認最新規定</footer>

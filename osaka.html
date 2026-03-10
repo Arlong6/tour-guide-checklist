@@ -46,6 +46,11 @@
     .fact-value { font-size: 0.9rem; font-weight: 700; color: #2d3748; }
     footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
   </style>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2b6cb0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <script>if("serviceWorker"in navigator)navigator.serviceWorker.register("./sw.js");</script>
 </head>
 <body>
   <header>

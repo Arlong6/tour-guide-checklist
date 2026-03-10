@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>韓國常用會話 – 旅遊實用韓語</title>
+  <meta name="theme-color" content="#4a5568">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="韓語會話">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8; color: #1a202c; min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute; top: 18px; left: 16px;
+      color: rgba(255,255,255,0.85); font-size: 0.9rem;
+      text-decoration: none; display: flex; align-items: center; gap: 4px;
+    }
+    header {
+      background: linear-gradient(135deg, #1a202c 0%, #4a5568 100%);
+      color: white; padding: 24px 20px 20px; text-align: center; position: relative;
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.4rem; font-weight: 800; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .container { padding: 16px 20px 60px; max-width: 600px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.78rem; font-weight: 700; color: #a0aec0;
+      letter-spacing: 0.06em; text-transform: uppercase; margin: 20px 0 10px;
+    }
+    .phrase-card {
+      background: white; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07); margin-bottom: 10px;
+    }
+    .phrase-item {
+      padding: 14px 16px; border-bottom: 1px solid #f7fafc;
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 12px; cursor: pointer; -webkit-tap-highlight-color: transparent;
+    }
+    .phrase-item:last-child { border-bottom: none; }
+    .phrase-item:active { background: #f7fafc; }
+    .phrase-left { flex: 1; }
+    .phrase-zh { font-size: 0.95rem; font-weight: 700; color: #1a202c; margin-bottom: 4px; }
+    .phrase-local { font-size: 1.05rem; color: #2d3748; margin-bottom: 3px; line-height: 1.4; }
+    .phrase-rom { font-size: 0.78rem; color: #a0aec0; font-style: italic; }
+    .copy-btn {
+      flex-shrink: 0; font-size: 0.75rem; color: #3182ce; background: #ebf8ff;
+      border: none; padding: 4px 10px; border-radius: 99px; cursor: pointer; margin-top: 2px;
+    }
+    .copy-btn.copied { background: #f0fff4; color: #38a169; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="korea-checklist.html" class="back-btn">&#8592; 返回</a>
+    <div class="flag">🇰🇷</div>
+    <h1>韓國常用會話</h1>
+    <p>旅遊實用韓語・Travel Korean</p>
+  </header>
+
+  <div class="container">
+
+    <div class="section-label">基本問候</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">你好</div>
+          <div class="phrase-local">안녕하세요</div>
+          <div class="phrase-rom">Annyeonghaseyo</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '안녕하세요')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">謝謝</div>
+          <div class="phrase-local">감사합니다</div>
+          <div class="phrase-rom">Gamsahamnida</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '감사합니다')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">不好意思</div>
+          <div class="phrase-local">실례합니다</div>
+          <div class="phrase-rom">Sillyehamnida</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '실례합니다')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">對不起</div>
+          <div class="phrase-local">죄송합니다</div>
+          <div class="phrase-rom">Joesonghamnida</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '죄송합니다')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">不客氣</div>
+          <div class="phrase-local">천만에요</div>
+          <div class="phrase-rom">Cheonmaneyo</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '천만에요')">複製</button>
+      </div>
+    </div>
+
+    <div class="section-label">問路 &amp; 交通</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請問...在哪裡？</div>
+          <div class="phrase-local">...이/가 어디예요?</div>
+          <div class="phrase-rom">...i/ga eodiyeyo?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '...이/가 어디예요?')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">地鐵站在哪裡？</div>
+          <div class="phrase-local">지하철역이 어디예요?</div>
+          <div class="phrase-rom">Jihacheol-yeogi eodiyeyo?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '지하철역이 어디예요?')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請幫我叫計程車</div>
+          <div class="phrase-local">택시를 불러주세요</div>
+          <div class="phrase-rom">Taeksi-reul bulleojuseyo</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '택시를 불러주세요')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請到這個地址</div>
+          <div class="phrase-local">이 주소로 가주세요</div>
+          <div class="phrase-rom">I juso-ro gajuseyo</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '이 주소로 가주세요')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">在這裡停車</div>
+          <div class="phrase-local">여기서 세워주세요</div>
+          <div class="phrase-rom">Yeogiseo sewo juseyo</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '여기서 세워주세요')">複製</button>
+      </div>
+    </div>
+
+    <div class="section-label">餐廳 &amp; 購物</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">我要點這個</div>
+          <div class="phrase-local">이것 주세요</div>
+          <div class="phrase-rom">Igeot juseyo</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '이것 주세요')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">多少錢？</div>
+          <div class="phrase-local">얼마예요?</div>
+          <div class="phrase-rom">Eolmayeyo?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '얼마예요?')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">可以刷卡嗎？</div>
+          <div class="phrase-local">카드 돼요?</div>
+          <div class="phrase-rom">Kadeu dwaeyo?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '카드 돼요?')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">好吃！</div>
+          <div class="phrase-local">맛있어요!</div>
+          <div class="phrase-rom">Massisseoyo!</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '맛있어요!')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請給我菜單</div>
+          <div class="phrase-local">메뉴판 주세요</div>
+          <div class="phrase-rom">Menyupan juseyo</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '메뉴판 주세요')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">不辣的</div>
+          <div class="phrase-local">안 매운 것으로</div>
+          <div class="phrase-rom">An maeun geoseuro</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '안 매운 것으로')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">打包帶走</div>
+          <div class="phrase-local">포장해 주세요</div>
+          <div class="phrase-rom">Pojang hae juseyo</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '포장해 주세요')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請再給我一份</div>
+          <div class="phrase-local">하나 더 주세요</div>
+          <div class="phrase-rom">Hana deo juseyo</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '하나 더 주세요')">複製</button>
+      </div>
+    </div>
+
+    <div class="section-label">住宿 &amp; 購物</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">我有訂房</div>
+          <div class="phrase-local">예약했어요</div>
+          <div class="phrase-rom">Yeyak haesseoyo</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '예약했어요')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">可以試穿嗎？</div>
+          <div class="phrase-local">입어봐도 돼요?</div>
+          <div class="phrase-rom">Ibeo bwado dwaeyo?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '입어봐도 돼요?')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">有沒有更便宜的？</div>
+          <div class="phrase-local">더 싼 거 있어요?</div>
+          <div class="phrase-rom">Deo ssan geo isseoyo?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '더 싼 거 있어요?')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">可以退稅嗎？</div>
+          <div class="phrase-local">택스 리펀 돼요?</div>
+          <div class="phrase-rom">Taekseu ripeon dwaeyo?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '택스 리펀 돼요?')">複製</button>
+      </div>
+    </div>
+
+    <div class="section-label">緊急狀況</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">救命！</div>
+          <div class="phrase-local">살려주세요!</div>
+          <div class="phrase-rom">Sallyeo juseyo!</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '살려주세요!')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請叫救護車</div>
+          <div class="phrase-local">구급차 불러주세요</div>
+          <div class="phrase-rom">Gugeupcha bulleojuseyo</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '구급차 불러주세요')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">廁所在哪裡？</div>
+          <div class="phrase-local">화장실이 어디예요?</div>
+          <div class="phrase-rom">Hwajangsiri eodiyeyo?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '화장실이 어디예요?')">複製</button>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>台灣旅遊出發清單 · 旅遊會話參考</footer>
+
+  <script>
+    function copyPhrase(btn, text) {
+      navigator.clipboard.writeText(text).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta);
+        ta.select(); document.execCommand('copy');
+        document.body.removeChild(ta);
+      });
+      btn.textContent = '已複製 ✓';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = '複製'; btn.classList.remove('copied'); }, 1500);
+    }
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>

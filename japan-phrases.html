@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日本常用會話 – 旅遊實用日語</title>
+  <meta name="theme-color" content="#c53030">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="日語會話">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8; color: #1a202c; min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute; top: 18px; left: 16px;
+      color: rgba(255,255,255,0.85); font-size: 0.9rem;
+      text-decoration: none; display: flex; align-items: center; gap: 4px;
+    }
+    header {
+      background: linear-gradient(135deg, #742a2a 0%, #c53030 100%);
+      color: white; padding: 24px 20px 20px; text-align: center; position: relative;
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.4rem; font-weight: 800; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .container { padding: 16px 20px 60px; max-width: 600px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.78rem; font-weight: 700; color: #a0aec0;
+      letter-spacing: 0.06em; text-transform: uppercase; margin: 20px 0 10px;
+    }
+    .phrase-card {
+      background: white; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07); margin-bottom: 10px;
+    }
+    .phrase-item {
+      padding: 14px 16px; border-bottom: 1px solid #f7fafc;
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 12px; cursor: pointer; -webkit-tap-highlight-color: transparent;
+    }
+    .phrase-item:last-child { border-bottom: none; }
+    .phrase-item:active { background: #f7fafc; }
+    .phrase-left { flex: 1; }
+    .phrase-zh { font-size: 0.95rem; font-weight: 700; color: #1a202c; margin-bottom: 4px; }
+    .phrase-local { font-size: 1.05rem; color: #2d3748; margin-bottom: 3px; line-height: 1.4; }
+    .phrase-rom { font-size: 0.78rem; color: #a0aec0; font-style: italic; }
+    .copy-btn {
+      flex-shrink: 0; font-size: 0.75rem; color: #3182ce; background: #ebf8ff;
+      border: none; padding: 4px 10px; border-radius: 99px; cursor: pointer; margin-top: 2px;
+    }
+    .copy-btn.copied { background: #f0fff4; color: #38a169; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="japan-checklist.html" class="back-btn">&#8592; 返回</a>
+    <div class="flag">🇯🇵</div>
+    <h1>日本常用會話</h1>
+    <p>旅遊實用日語・Travel Japanese</p>
+  </header>
+
+  <div class="container">
+
+    <div class="section-label">基本問候</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">你好</div>
+          <div class="phrase-local">こんにちは</div>
+          <div class="phrase-rom">Konnichiwa</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, 'こんにちは')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">謝謝</div>
+          <div class="phrase-local">ありがとうございます</div>
+          <div class="phrase-rom">Arigatou gozaimasu</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, 'ありがとうございます')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">不好意思 / 打擾了</div>
+          <div class="phrase-local">すみません</div>
+          <div class="phrase-rom">Sumimasen</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, 'すみません')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">對不起</div>
+          <div class="phrase-local">ごめんなさい</div>
+          <div class="phrase-rom">Gomen nasai</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, 'ごめんなさい')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">不客氣</div>
+          <div class="phrase-local">どういたしまして</div>
+          <div class="phrase-rom">Dou itashimashite</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, 'どういたしまして')">複製</button>
+      </div>
+    </div>
+
+    <div class="section-label">問路 &amp; 交通</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請問...在哪裡？</div>
+          <div class="phrase-local">...はどこですか？</div>
+          <div class="phrase-rom">...wa doko desu ka?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '...はどこですか？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">車站在哪裡？</div>
+          <div class="phrase-local">駅はどこですか？</div>
+          <div class="phrase-rom">Eki wa doko desu ka?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '駅はどこですか？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請問怎麼去...？</div>
+          <div class="phrase-local">...へはどうやって行きますか？</div>
+          <div class="phrase-rom">...e wa dōyatte ikimasu ka?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '...へはどうやって行きますか？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">這班車到...嗎？</div>
+          <div class="phrase-local">この電車は...に行きますか？</div>
+          <div class="phrase-rom">Kono densha wa ... ni ikimasu ka?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, 'この電車は...に行きますか？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請在這裡停車</div>
+          <div class="phrase-local">ここで止めてください</div>
+          <div class="phrase-rom">Koko de tomete kudasai</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, 'ここで止めてください')">複製</button>
+      </div>
+    </div>
+
+    <div class="section-label">餐廳 &amp; 購物</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">我要點這個</div>
+          <div class="phrase-local">これをください</div>
+          <div class="phrase-rom">Kore o kudasai</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, 'これをください')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">多少錢？</div>
+          <div class="phrase-local">いくらですか？</div>
+          <div class="phrase-rom">Ikura desu ka?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, 'いくらですか？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">可以刷卡嗎？</div>
+          <div class="phrase-local">カードで払えますか？</div>
+          <div class="phrase-rom">Kādo de haraemasu ka?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, 'カードで払えますか？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">好吃！</div>
+          <div class="phrase-local">おいしい！</div>
+          <div class="phrase-rom">Oishii!</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, 'おいしい！')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請給我菜單</div>
+          <div class="phrase-local">メニューをください</div>
+          <div class="phrase-rom">Menyū o kudasai</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, 'メニューをください')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">我對...過敏</div>
+          <div class="phrase-local">...アレルギーがあります</div>
+          <div class="phrase-rom">...arerugī ga arimasu</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '...アレルギーがあります')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">不辣的</div>
+          <div class="phrase-local">辛くないもの</div>
+          <div class="phrase-rom">Karakunai mono</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '辛くないもの')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">打包帶走</div>
+          <div class="phrase-local">持ち帰り</div>
+          <div class="phrase-rom">Mochikaeri</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '持ち帰り')">複製</button>
+      </div>
+    </div>
+
+    <div class="section-label">住宿 &amp; 購物</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">我有訂房</div>
+          <div class="phrase-local">予約があります</div>
+          <div class="phrase-rom">Yoyaku ga arimasu</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '予約があります')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">有免稅嗎？</div>
+          <div class="phrase-local">免税できますか？</div>
+          <div class="phrase-rom">Menzei dekimasu ka?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '免税できますか？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請幫我推薦</div>
+          <div class="phrase-local">おすすめを教えてください</div>
+          <div class="phrase-rom">Osusume o oshiete kudasai</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, 'おすすめを教えてください')">複製</button>
+      </div>
+    </div>
+
+    <div class="section-label">緊急狀況</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">救命！</div>
+          <div class="phrase-local">助けてください！</div>
+          <div class="phrase-rom">Tasukete kudasai!</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '助けてください！')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請叫救護車</div>
+          <div class="phrase-local">救急車を呼んでください</div>
+          <div class="phrase-rom">Kyūkyūsha o yonde kudasai</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '救急車を呼んでください')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">我需要醫生</div>
+          <div class="phrase-local">医者が必要です</div>
+          <div class="phrase-rom">Isha ga hitsuyō desu</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '医者が必要です')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">廁所在哪裡？</div>
+          <div class="phrase-local">トイレはどこですか？</div>
+          <div class="phrase-rom">Toire wa doko desu ka?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, 'トイレはどこですか？')">複製</button>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>台灣旅遊出發清單 · 旅遊會話參考</footer>
+
+  <script>
+    function copyPhrase(btn, text) {
+      navigator.clipboard.writeText(text).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta);
+        ta.select(); document.execCommand('copy');
+        document.body.removeChild(ta);
+      });
+      btn.textContent = '已複製 ✓';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = '複製'; btn.classList.remove('copied'); }, 1500);
+    }
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中國常用會話 – 旅遊實用普通話</title>
+  <meta name="theme-color" content="#c0392b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="普通話會話">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f0f4f8; color: #1a202c; min-height: 100vh;
+    }
+    .back-btn {
+      position: absolute; top: 18px; left: 16px;
+      color: rgba(255,255,255,0.85); font-size: 0.9rem;
+      text-decoration: none; display: flex; align-items: center; gap: 4px;
+    }
+    header {
+      background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+      color: white; padding: 24px 20px 20px; text-align: center; position: relative;
+    }
+    header .flag { font-size: 2rem; margin-bottom: 6px; }
+    header h1 { font-size: 1.4rem; font-weight: 800; margin-bottom: 4px; }
+    header p { font-size: 0.85rem; opacity: 0.85; }
+    .container { padding: 16px 20px 60px; max-width: 600px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.78rem; font-weight: 700; color: #a0aec0;
+      letter-spacing: 0.06em; text-transform: uppercase; margin: 20px 0 10px;
+    }
+    .phrase-card {
+      background: white; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07); margin-bottom: 10px;
+    }
+    .phrase-item {
+      padding: 14px 16px; border-bottom: 1px solid #f7fafc;
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 12px; cursor: pointer; -webkit-tap-highlight-color: transparent;
+    }
+    .phrase-item:last-child { border-bottom: none; }
+    .phrase-item:active { background: #f7fafc; }
+    .phrase-left { flex: 1; }
+    .phrase-zh { font-size: 0.95rem; font-weight: 700; color: #1a202c; margin-bottom: 4px; }
+    .phrase-local { font-size: 1.05rem; color: #2d3748; margin-bottom: 3px; line-height: 1.4; }
+    .phrase-rom { font-size: 0.78rem; color: #a0aec0; font-style: italic; }
+    .copy-btn {
+      flex-shrink: 0; font-size: 0.75rem; color: #3182ce; background: #ebf8ff;
+      border: none; padding: 4px 10px; border-radius: 99px; cursor: pointer; margin-top: 2px;
+    }
+    .copy-btn.copied { background: #f0fff4; color: #38a169; }
+    footer { text-align: center; font-size: 0.75rem; color: #a0aec0; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="china-checklist.html" class="back-btn">&#8592; 返回</a>
+    <div class="flag">🇨🇳</div>
+    <h1>中國常用會話</h1>
+    <p>旅遊實用普通話・Travel Mandarin</p>
+  </header>
+
+  <div class="container">
+
+    <div class="section-label">基本溝通</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請問可以說慢一點嗎？</div>
+          <div class="phrase-local">请问能说慢一点吗？</div>
+          <div class="phrase-rom">Qǐngwèn néng shuō màn yīdiǎn ma?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '请问能说慢一点吗？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">我是台灣來的</div>
+          <div class="phrase-local">我是从台湾来的</div>
+          <div class="phrase-rom">Wǒ shì cóng Táiwān lái de</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '我是从台湾来的')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">我聽不懂廣東話</div>
+          <div class="phrase-local">我听不懂广东话</div>
+          <div class="phrase-rom">Wǒ tīng bù dǒng Guǎngdōnghuà</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '我听不懂广东话')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請說普通話</div>
+          <div class="phrase-local">请说普通话</div>
+          <div class="phrase-rom">Qǐng shuō pǔtōnghuà</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '请说普通话')">複製</button>
+      </div>
+    </div>
+
+    <div class="section-label">支付 &amp; 購物</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">可以掃碼付款嗎？</div>
+          <div class="phrase-local">可以扫码付款吗？</div>
+          <div class="phrase-rom">Kěyǐ sǎo mǎ fùkuǎn ma?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '可以扫码付款吗？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">我用支付寶付</div>
+          <div class="phrase-local">我用支付宝付</div>
+          <div class="phrase-rom">Wǒ yòng Zhīfùbǎo fù</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '我用支付宝付')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">多少錢？</div>
+          <div class="phrase-local">多少钱？</div>
+          <div class="phrase-rom">Duōshǎo qián?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '多少钱？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">可以便宜一點嗎？</div>
+          <div class="phrase-local">可以便宜一点吗？</div>
+          <div class="phrase-rom">Kěyǐ piányí yīdiǎn ma?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '可以便宜一点吗？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">有發票嗎？</div>
+          <div class="phrase-local">有发票吗？</div>
+          <div class="phrase-rom">Yǒu fāpiào ma?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '有发票吗？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">我要打包</div>
+          <div class="phrase-local">我要打包</div>
+          <div class="phrase-rom">Wǒ yào dǎbāo</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '我要打包')">複製</button>
+      </div>
+    </div>
+
+    <div class="section-label">交通</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">我要去...</div>
+          <div class="phrase-local">我要去...</div>
+          <div class="phrase-rom">Wǒ yào qù...</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '我要去...')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請幫我叫滴滴</div>
+          <div class="phrase-local">帮我叫一下滴滴</div>
+          <div class="phrase-rom">Bāng wǒ jiào yīxià Dīdī</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '帮我叫一下滴滴')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">堵車嗎？</div>
+          <div class="phrase-local">堵车吗？</div>
+          <div class="phrase-rom">Dǔchē ma?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '堵车吗？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">地鐵站在哪裡？</div>
+          <div class="phrase-local">地铁站在哪里？</div>
+          <div class="phrase-rom">Dìtiě zhàn zài nǎlǐ?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '地铁站在哪里？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">這附近有便利商店嗎？</div>
+          <div class="phrase-local">附近有便利店吗？</div>
+          <div class="phrase-rom">Fùjìn yǒu biànlì diàn ma?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '附近有便利店吗？')">複製</button>
+      </div>
+    </div>
+
+    <div class="section-label">餐廳</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">不辣</div>
+          <div class="phrase-local">不辣</div>
+          <div class="phrase-rom">Bù là</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '不辣')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">微辣</div>
+          <div class="phrase-local">微辣</div>
+          <div class="phrase-rom">Wēi là</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '微辣')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">不要香菜</div>
+          <div class="phrase-local">不要香菜</div>
+          <div class="phrase-rom">Bùyào xiāngcài</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '不要香菜')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">好吃！</div>
+          <div class="phrase-local">好吃！</div>
+          <div class="phrase-rom">Hǎochī!</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '好吃！')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">有素食選項嗎？</div>
+          <div class="phrase-local">有素食吗？</div>
+          <div class="phrase-rom">Yǒu sùshí ma?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '有素食吗？')">複製</button>
+      </div>
+    </div>
+
+    <div class="section-label">緊急狀況</div>
+    <div class="phrase-card">
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">救命！</div>
+          <div class="phrase-local">救命！</div>
+          <div class="phrase-rom">Jiù mìng!</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '救命！')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">請叫救護車</div>
+          <div class="phrase-local">请叫救护车</div>
+          <div class="phrase-rom">Qǐng jiào jiùhùchē</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '请叫救护车')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">最近的醫院在哪裡？</div>
+          <div class="phrase-local">最近的医院在哪里？</div>
+          <div class="phrase-rom">Zuìjìn de yīyuàn zài nǎlǐ?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '最近的医院在哪里？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">廁所在哪裡？</div>
+          <div class="phrase-local">洗手间在哪里？</div>
+          <div class="phrase-rom">Xǐshǒujiān zài nǎlǐ?</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '洗手间在哪里？')">複製</button>
+      </div>
+      <div class="phrase-item">
+        <div class="phrase-left">
+          <div class="phrase-zh">我的手機沒有訊號</div>
+          <div class="phrase-local">我的手机没有信号</div>
+          <div class="phrase-rom">Wǒ de shǒujī méiyǒu xìnhào</div>
+        </div>
+        <button class="copy-btn" onclick="copyPhrase(this, '我的手机没有信号')">複製</button>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>台灣旅遊出發清單 · 旅遊會話參考</footer>
+
+  <script>
+    function copyPhrase(btn, text) {
+      navigator.clipboard.writeText(text).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta);
+        ta.select(); document.execCommand('copy');
+        document.body.removeChild(ta);
+      });
+      btn.textContent = '已複製 ✓';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = '複製'; btn.classList.remove('copied'); }, 1500);
+    }
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>
